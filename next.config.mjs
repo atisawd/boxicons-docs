@@ -7,7 +7,7 @@ const withNextra = nextra({
   codeHighlight:true,
   search: { codeblocks: false },
   output: 'export',
- 
+  basePath: "/boxicons-docs",
 })
  
 // Export the final Next.js config with Nextra included
