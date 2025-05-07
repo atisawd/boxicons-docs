@@ -2,8 +2,16 @@
   "version": 3,
   "pages404": true,
   "caseSensitive": false,
-  "basePath": "",
+  "basePath": "/boxicons-docs",
   "redirects": [
+    {
+      "source": "/boxicons-docs/",
+      "destination": "/boxicons-docs",
+      "basePath": false,
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^/boxicons-docs/$"
+    },
     {
       "source": "/:path+/",
       "destination": "/:path+",
