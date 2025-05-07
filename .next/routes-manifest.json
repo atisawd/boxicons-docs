@@ -2,16 +2,8 @@
   "version": 3,
   "pages404": true,
   "caseSensitive": false,
-  "basePath": "/boxicons-docs",
+  "basePath": "",
   "redirects": [
-    {
-      "source": "/boxicons-docs/",
-      "destination": "/boxicons-docs",
-      "basePath": false,
-      "internal": true,
-      "statusCode": 308,
-      "regex": "^/boxicons-docs/$"
-    },
     {
       "source": "/:path+/",
       "destination": "/:path+",
@@ -37,6 +29,12 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
     }
   ],
   "dataRoutes": [],

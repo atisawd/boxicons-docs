@@ -14,7 +14,7 @@
     },
     "distDir": ".next",
     "cleanDistDir": true,
-    "assetPrefix": "/boxicons-docs",
+    "assetPrefix": "",
     "cacheMaxMemorySize": 52428800,
     "configOrigin": "next.config.mjs",
     "useFileSystemPublicRoutes": true,
@@ -50,7 +50,7 @@
         256,
         384
       ],
-      "path": "/boxicons-docs/_next/image",
+      "path": "/_next/image",
       "loader": "default",
       "loaderFile": "",
       "domains": [],
@@ -73,9 +73,9 @@
       "pagesBufferLength": 5
     },
     "amp": {
-      "canonicalBase": "/boxicons-docs"
+      "canonicalBase": ""
     },
-    "basePath": "/boxicons-docs",
+    "basePath": "",
     "sassOptions": {},
     "trailingSlash": false,
     "i18n": null,
