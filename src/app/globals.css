@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import 'nextra-theme-docs/style.css'; /* or nextra-theme-blog/style.css */
+ 
+@variant dark (&:where(.dark *));
+@layer utilities {
+    .x\:dark\:bg-\[linear-gradient\(1deg\,\#383838\,\#212121\)\] {
+        &:where(.dark *) {
+          background-color: #6c00e3;
+          background-image: none;
+        }
+      }
+  }
