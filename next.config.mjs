@@ -14,5 +14,5 @@ export default withNextra({
   // ... Add regular Next.js options here
   reactStrictMode: true,
     output: 'export',
-  basePath: "/boxicons-docs"
+  basePath: "/"
 })
