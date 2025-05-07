@@ -9,6 +9,9 @@ const withNextra = nextra({
   output: 'export',
   basePath: "/boxicons-docs"
 })
+ 
+// Export the final Next.js config with Nextra included
 export default withNextra({
+  // ... Add regular Next.js options here
   reactStrictMode: true
 })
