@@ -5,7 +5,8 @@ const withNextra = nextra({
   // ... Add Nextra-specific options here
   latex: true,
   codeHighlight:true,
-  search: { codeblocks: false }
+  search: { codeblocks: false },
+  output: 'export',
  
 })
  
