@@ -10,7 +10,10 @@
     "dev": "next --turbopack",
     "build": "next build",
     "start": "next start",
-     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
+     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+     "add":"git add .",
+     "push":"git push -u origin main"
+     
   },
   "dependencies": {
     "next": "^15.3.1",
