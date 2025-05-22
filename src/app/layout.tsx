@@ -16,7 +16,7 @@ const navbar = (
     // ... Your additional navbar options
   
    projectLink='https://github.com/atiswd/boxicons'
-
+chatLink="https://discord.gg/ZhWjGfzM"
   />
 
 )
