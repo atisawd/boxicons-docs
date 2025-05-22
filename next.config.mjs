@@ -6,6 +6,7 @@ const withNextra = nextra({
   latex: true,
   codeHighlight:true,
   search: { codeblocks: false }
+  ,
 
 })
  

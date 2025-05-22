@@ -8,7 +8,7 @@ export const metadata = {
   // Define your metadata here
   // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 }
- 
+
 const banner = <Banner storageKey="some-key">Boxicons v3.0 is released 🎉</Banner>
 const navbar = (
   <Navbar
@@ -39,10 +39,15 @@ export default async function RootLayout({ children }:{children: React.ReactNode
       </Head>
       <body>
         <Layout
+          feedback={{
+            content: 'Question? Give us feedback →',
+            labels: 'feedback',
+          }}
+        editLink={'https://github.com/atisawd/boxicons-docs'}
           banner={banner}
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+          docsRepositoryBase="https://github.com/atisawd/boxicons"
           footer={footer}
           // ... Your additional layout options
         >
