@@ -7,17 +7,21 @@ You can use our icons as fonts
 
 Copy-paste the stylesheet `link` into your `head` to load our CSS
 ```html copy
-<link href='<LINK_TO_DOWNLOADED_FONT_CSS>' rel='stylesheet'>
+<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css` rel='stylesheet'>
 ```
-The font can be download from our downloads page for logged users or from Gumroad.
-We will be publishing the font files to NPM next month.
+or
+```html copy
+<link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css` rel='stylesheet'>
+```
+
+The font is hosted on reliable CDN to serve your websites with ease
 This will load boxicons font into your webpage
 
 ### HTML 
 To use an icon on your page, add a prefix `bx-` for regular icons, `bxs-` for filled variant of icons followed by the icon name and seperate class :
-```html /bx bx-user/ 
-<i class='bx bx-user'></i>
-<i class='bx bxs-user'></i>
+```html /bx bx-volleyball/ 
+<i class='bx bx-volleyball'></i>
+<i class='bx bxs-volleyball'></i>
 ```
 
 ### Starter Template
@@ -29,13 +33,15 @@ Create an HTML document and copy-paste the starter template
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 <!-- Boxicons CSS -->
-<link href='<LINK_TO_DOWNLOADED_FONT_CSS>' rel='stylesheet'>
+<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css` rel='stylesheet'>
+<link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css` rel='stylesheet'>
+
 <title>Hello, Boxicons!</title>
 </head>
 <body>
 <h1>Hello, Boxicons!</h1>
 <i class='bx bx-hot'></i>
-<i class='bx bxs-hot'></i>
+<i class='bxl bx-twitter-x'></i>
 </body>
 </html>
 ```
