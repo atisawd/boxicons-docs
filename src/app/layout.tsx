@@ -43,11 +43,11 @@ export default async function RootLayout({ children }:{children: React.ReactNode
             content: 'Question? Give us feedback →',
             labels: 'feedback',
           }}
-        editLink={'https://github.com/atisawd/boxicons-docs'}
+        editLink={'Edit this page'}
           banner={banner}
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/atisawd/boxicons"
+          docsRepositoryBase="https://github.com/atisawd/boxicons-docs/tree/main"
           footer={footer}
           // ... Your additional layout options
         >
