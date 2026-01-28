@@ -5,7 +5,7 @@ const withNextra = nextra({
   latex: true,
   codeHighlight:true,
   search: { codeblocks: false },
-
+defaultShowCopyCode:true,
 })
  
 // Export the final Next.js config with Nextra included

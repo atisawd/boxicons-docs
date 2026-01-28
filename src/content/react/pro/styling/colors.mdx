@@ -1,0 +1,38 @@
+# Colors
+
+Use the `fill` prop to change the icon color (defaults to `currentColor`):
+
+```tsx
+<Alarm fill="#ff0000" />
+<Alarm fill="rgb(0, 128, 255)" />
+<Alarm fill="currentColor" /> {/* Inherits text color */}
+```
+#### Customizing Duotone Colors
+
+```jsx
+// Customizing duotone each layer color and opacity
+<Alarm 
+  pack="duotone"
+  primaryFill="#1E40AF"      // Primary layer color (foreground)
+  primaryOpacity={1}          // Primary layer opacity
+  secondaryFill="#3B82F6"    // Secondary layer color (background)
+  secondaryOpacity={0.4}      // Secondary layer opacity
+/>
+
+// Customizing duotone whole svg
+<Alarm 
+  pack="duotone"
+  fill="#3B82F6"
+  opacity={0.8}
+  />
+```
+
+
+### Opacity
+
+Control transparency with the `opacity` prop:
+
+```tsx
+<Alarm opacity={0.5} />
+<Alarm opacity="0.75" />
+```

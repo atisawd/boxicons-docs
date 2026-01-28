@@ -43,7 +43,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Animations",
     "filePath": "src/content/font/animation.mdx",
-    "timestamp": 1768556383376
+    "timestamp": 1769581753142
 };
 const sourceCode = "# Animations\n\nBoxicons comes with a set of pre-built CSS animations that let you add motion to your icons with simple utility classes. Animations are useful for drawing attention to actions, indicating loading states, or adding subtle feedback to your UI.\n<br/>\n---\n## Enable Animations\n\nTo use the animation utilities, you first need to include the animations stylesheet in the `<head>` of your page:\n\n```html filename=\"animations.min.css\" copy\n<link href=\"https://cdn.boxicons.com/animations.min.css\" rel=\"stylesheet\">\n```\n\n## Basic Animations\n\nYou can apply an animation to an icon by adding one of the animation classes directly to it.\n\n### Available animation classes\n\n* `bx-spin`\n* `bx-tada`\n* `bx-flashing`\n* `bx-burst`\n* `bx-fade-left`\n* `bx-fade-right`\n* `bx-fade-up`\n* `bx-fade-down`\n* `bx-breathe`\n* `bx-beat`\n* `bx-wiggle`\n* `bx-bounce`\n\n```html copy\n<i class=\"bxf bx-thumb-up bx-spin\"></i>\n<i class=\"bxf bx-thumb-up bx-tada\"></i>\n<i class=\"bxf bx-thumb-up bx-bounce\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-golf-ball bx-spin\"></i>\n<i className=\"bxdocs bxrf-200-golf-ball bx-tada\"></i>\n<i className=\"bxdocs bxrf-200-golf-ball bx-bounce\"></i>\n</div>\n\nThese animations run continuously by default.\n\n## On Hover Animation\n\nIf you only want the animation to play when the user hovers over the icon, use the -hover variants of the animation classes.\n\n### Hover animation classes\n\n* `bx-spin-hover`\n* `bx-tada-hover`\n* `bx-flashing-hover`\n* `bx-burst-hover`\n* `bx-fade-left-hover`\n* `bx-fade-right-hover`\n* `bx-fade-up-hover`\n* `bx-fade-down-hover`\n* `bx-breathe-hover`\n* `bx-beat-hover`\n* `bx-wiggle-hover`\n* `bx-bounce-hover`\n\n```html copy\n<i class=\"bxf bx-thumb-up bx-spin-hover\"></i>\n<i class=\"bxf bx-thumb-up bx-tada-hover\"></i>\n<i class=\"bxf bx-thumb-up bx-bounce-hover\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-golf-ball bx-spin-hover\"></i>\n<i className=\"bxdocs bxrf-200-golf-ball bx-tada-hover\"></i>\n<i className=\"bxdocs bxrf-200-golf-ball bx-bounce-hover\"></i>\n</div>\n\n\n## Controlling Animation Speed and Repetition\n\nBecause these are pure CSS animations, you can fully control them using standard CSS properties:\n\n* `animation-duration` — controls how fast or slow the animation runs\n* `animation-iteration-count` — controls how many times the animation repeats\n\n```html copy\n<i\n  class=\"bxf bx-thumb-up bx-spin\"\n  style=\"animation-duration: 2s; animation-iteration-count: 1;\"\n></i>\n```";
 function useTOC(props) {
@@ -1675,10 +1675,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$di
 const metadata = {
     "title": "Border",
     "filePath": "src/content/font/styling/border.mdx",
-    "timestamp": 1768556383376
+    "timestamp": 1769581753191
 };
 ;
-const sourceCode = "import { Callout } from 'nextra/components'\n\n# Border\n\nBoxicons provides utility classes that let you quickly add a border around any icon. This is useful when you want to display icons as buttons, badges, or highlighted UI elements without writing custom CSS.\n<br/>\n---\nTwo border styles are available:\n\n- `bx-border` — adds a square (rounded-rectangle) border around the icon  \n- `bx-border-circle` — adds a circular border around the icon  \n\n\n<Callout type=\"warning\">\n Make sure you have included the transformations stylesheet before using these classes.\n</Callout>\n\n```html filename=\"transformations.min.css\" copy\n<link href=\"https://cdn.boxicons.com/transformations.min.css\" rel=\"stylesheet\">\n```\n\n```html \n<i class=\"bxf bx-thumb-up bx-border\"></i>\n<i class=\"bxf bx-thumb-up bx-border-circle\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-thumb-up bx-border\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-border-circle\"></i>\n</div>\n#### How it works\n\n* The border is drawn using CSS around the icon glyph.\n* The icon remains fully scalable and inherits color and size normally.\n* The border automatically scales with the icon size.\n\nThis means you can combine borders with sizing, color, and rotation utilities:\n\n```html copy\n<i class=\"bx bx-heart bx-border bx-lg\" style=\"color: red;\"></i>\n<i class=\"bx bx-heart bx-border-circle bx-sm\"></i>\n```";
+const sourceCode = "import { Callout } from 'nextra/components'\n\n# Border\n\nBoxicons provides utility classes that let you quickly add a border around any icon. This is useful when you want to display icons as buttons, badges, or highlighted UI elements without writing custom CSS.\n<br/>\n---\nTwo border styles are available:\n\n- `bx-border` — adds a square (rounded-rectangle) border around the icon  \n- `bx-border-circle` — adds a circular border around the icon  \n\n\n<Callout type=\"warning\">\n Make sure you have included the transformations stylesheet before using these classes.\n</Callout>\n\n```html filename=\"transformations.min.css\" copy\n<link href=\"https://cdn.boxicons.com/transformations.min.css\" rel=\"stylesheet\">\n```\n\n```html \n<i class=\"bxf bx-thumb-up bx-border\"></i>\n<i class=\"bxf bx-thumb-up bx-border-circle\"></i>\n<i class=\"bxf bx-thumb-up bx-border-squircle\"></i>\n```\n<Callout type=\"warning\">\n `bx-border-squircle` only works in select browsers\n </Callout>\n\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-thumb-up bx-border\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-border-circle\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-border-squircle\"></i>\n</div>\n#### How it works\n\n* The border is drawn using CSS around the icon glyph.\n* The icon remains fully scalable and inherits color and size normally.\n* The border automatically scales with the icon size.\n\nThis means you can combine borders with sizing, color, and rotation utilities:\n\n```html copy\n<i class=\"bx bx-heart bx-border bx-lg\" style=\"color: red;\"></i>\n<i class=\"bx bx-heart bx-border-circle bx-sm\"></i>\n```";
 function useTOC(props) {
     return [
         {
@@ -1930,6 +1930,7 @@ function _createMdxContent(props) {
                 tabIndex: "0",
                 "data-language": "html",
                 "data-word-wrap": "",
+                "data-copy": "",
                 "data-pagefind-ignore": "all",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.code, {
                     children: [
@@ -1944,7 +1945,7 @@ function _createMdxContent(props) {
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                                     lineNumber: 60,
-                                    columnNumber: 224
+                                    columnNumber: 237
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -2027,7 +2028,7 @@ function _createMdxContent(props) {
                         }, void 0, true, {
                             fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                             lineNumber: 60,
-                            columnNumber: 206
+                            columnNumber: 219
                         }, this),
                         "\n",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -2125,102 +2126,8 @@ function _createMdxContent(props) {
                             fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                             lineNumber: 84,
                             columnNumber: 55
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                    lineNumber: 60,
-                    columnNumber: 188
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                lineNumber: 60,
-                columnNumber: 92
-            }, this),
-            "\n",
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "icon-display",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                        className: "bxdocs bxrf-200-thumb-up bx-border"
-                    }, void 0, false, {
-                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                        lineNumber: 108,
-                        columnNumber: 122
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
-                        className: "bxdocs bxrf-200-thumb-up bx-border-circle"
-                    }, void 0, false, {
-                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                        lineNumber: 108,
-                        columnNumber: 174
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                lineNumber: 108,
-                columnNumber: 92
-            }, this),
-            "\n",
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.h4, {
-                id: toc[0].id,
-                children: toc[0].value
-            }, void 0, false, {
-                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                lineNumber: 108,
-                columnNumber: 245
-            }, this),
-            "\n",
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.ul, {
-                children: [
-                    "\n",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.li, {
-                        children: "The border is drawn using CSS around the icon glyph."
-                    }, void 0, false, {
-                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                        lineNumber: 108,
-                        columnNumber: 335
-                    }, this),
-                    "\n",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.li, {
-                        children: "The icon remains fully scalable and inherits color and size normally."
-                    }, void 0, false, {
-                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                        lineNumber: 108,
-                        columnNumber: 430
-                    }, this),
-                    "\n",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.li, {
-                        children: "The border automatically scales with the icon size."
-                    }, void 0, false, {
-                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                        lineNumber: 108,
-                        columnNumber: 542
-                    }, this),
-                    "\n"
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                lineNumber: 108,
-                columnNumber: 313
-            }, this),
-            "\n",
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.p, {
-                children: "This means you can combine borders with sizing, color, and rotation utilities:"
-            }, void 0, false, {
-                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                lineNumber: 108,
-                columnNumber: 659
-            }, this),
-            "\n",
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.pre, {
-                tabIndex: "0",
-                "data-language": "html",
-                "data-word-wrap": "",
-                "data-copy": "",
-                "data-pagefind-ignore": "all",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.code, {
-                    children: [
+                        }, this),
+                        "\n",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -2232,7 +2139,7 @@ function _createMdxContent(props) {
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                                     lineNumber: 108,
-                                    columnNumber: 923
+                                    columnNumber: 73
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -2272,43 +2179,10 @@ function _createMdxContent(props) {
                                         "--shiki-light": "#032F62",
                                         "--shiki-dark": "#9ECBFF"
                                     },
-                                    children: "\"bx bx-heart bx-border bx-lg\""
+                                    children: "\"bxf bx-thumb-up bx-border-squircle\""
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                                     lineNumber: 120,
-                                    columnNumber: 30
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
-                                    style: {
-                                        "--shiki-light": "#6F42C1",
-                                        "--shiki-dark": "#B392F0"
-                                    },
-                                    children: " style"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 123,
-                                    columnNumber: 60
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
-                                    style: {
-                                        "--shiki-light": "#24292E",
-                                        "--shiki-dark": "#E1E4E8"
-                                    },
-                                    children: "="
-                                }, void 0, false, {
-                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 126,
-                                    columnNumber: 35
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
-                                    style: {
-                                        "--shiki-light": "#032F62",
-                                        "--shiki-dark": "#9ECBFF"
-                                    },
-                                    children: "\"color: red;\""
-                                }, void 0, false, {
-                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 129,
                                     columnNumber: 30
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -2319,8 +2193,8 @@ function _createMdxContent(props) {
                                     children: "></"
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 132,
-                                    columnNumber: 44
+                                    lineNumber: 123,
+                                    columnNumber: 67
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -2330,7 +2204,7 @@ function _createMdxContent(props) {
                                     children: "i"
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 126,
                                     columnNumber: 32
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -2341,16 +2215,141 @@ function _createMdxContent(props) {
                                     children: ">"
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 129,
                                     columnNumber: 30
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                             lineNumber: 108,
-                            columnNumber: 905
+                            columnNumber: 55
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                    lineNumber: 60,
+                    columnNumber: 201
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                lineNumber: 60,
+                columnNumber: 92
+            }, this),
+            "\n",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$dist$2f$client$2f$components$2f$callout$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Callout"], {
+                type: "warning",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.p, {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.code, {
+                            children: "bx-border-squircle"
+                        }, void 0, false, {
+                            fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                            lineNumber: 132,
+                            columnNumber: 131
                         }, this),
-                        "\n",
+                        " only works in select browsers"
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                    lineNumber: 132,
+                    columnNumber: 116
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                lineNumber: 132,
+                columnNumber: 92
+            }, this),
+            "\n",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "icon-display",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
+                        className: "bxdocs bxrf-200-thumb-up bx-border"
+                    }, void 0, false, {
+                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                        lineNumber: 132,
+                        columnNumber: 286
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
+                        className: "bxdocs bxrf-200-thumb-up bx-border-circle"
+                    }, void 0, false, {
+                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                        lineNumber: 132,
+                        columnNumber: 338
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
+                        className: "bxdocs bxrf-200-thumb-up bx-border-squircle"
+                    }, void 0, false, {
+                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                        lineNumber: 132,
+                        columnNumber: 397
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                lineNumber: 132,
+                columnNumber: 256
+            }, this),
+            "\n",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.h4, {
+                id: toc[0].id,
+                children: toc[0].value
+            }, void 0, false, {
+                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                lineNumber: 132,
+                columnNumber: 470
+            }, this),
+            "\n",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.ul, {
+                children: [
+                    "\n",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.li, {
+                        children: "The border is drawn using CSS around the icon glyph."
+                    }, void 0, false, {
+                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                        lineNumber: 132,
+                        columnNumber: 560
+                    }, this),
+                    "\n",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.li, {
+                        children: "The icon remains fully scalable and inherits color and size normally."
+                    }, void 0, false, {
+                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                        lineNumber: 132,
+                        columnNumber: 655
+                    }, this),
+                    "\n",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.li, {
+                        children: "The border automatically scales with the icon size."
+                    }, void 0, false, {
+                        fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                        lineNumber: 132,
+                        columnNumber: 767
+                    }, this),
+                    "\n"
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                lineNumber: 132,
+                columnNumber: 538
+            }, this),
+            "\n",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.p, {
+                children: "This means you can combine borders with sizing, color, and rotation utilities:"
+            }, void 0, false, {
+                fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                lineNumber: 132,
+                columnNumber: 884
+            }, this),
+            "\n",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.pre, {
+                tabIndex: "0",
+                "data-language": "html",
+                "data-word-wrap": "",
+                "data-copy": "",
+                "data-pagefind-ignore": "all",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.code, {
+                    children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -2361,8 +2360,8 @@ function _createMdxContent(props) {
                                     children: "<"
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 141,
-                                    columnNumber: 73
+                                    lineNumber: 132,
+                                    columnNumber: 1148
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -2372,7 +2371,7 @@ function _createMdxContent(props) {
                                     children: "i"
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 135,
                                     columnNumber: 30
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -2383,8 +2382,41 @@ function _createMdxContent(props) {
                                     children: " class"
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 138,
                                     columnNumber: 30
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#24292E",
+                                        "--shiki-dark": "#E1E4E8"
+                                    },
+                                    children: "="
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 141,
+                                    columnNumber: 35
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#032F62",
+                                        "--shiki-dark": "#9ECBFF"
+                                    },
+                                    children: "\"bx bx-heart bx-border bx-lg\""
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 144,
+                                    columnNumber: 30
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#6F42C1",
+                                        "--shiki-dark": "#B392F0"
+                                    },
+                                    children: " style"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 147,
+                                    columnNumber: 60
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -2402,7 +2434,7 @@ function _createMdxContent(props) {
                                         "--shiki-light": "#032F62",
                                         "--shiki-dark": "#9ECBFF"
                                     },
-                                    children: "\"bx bx-heart bx-border-circle bx-sm\""
+                                    children: "\"color: red;\""
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                                     lineNumber: 153,
@@ -2417,7 +2449,7 @@ function _createMdxContent(props) {
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
                                     lineNumber: 156,
-                                    columnNumber: 67
+                                    columnNumber: 44
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -2444,19 +2476,116 @@ function _createMdxContent(props) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                            lineNumber: 141,
+                            lineNumber: 132,
+                            columnNumber: 1130
+                        }, this),
+                        "\n",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#24292E",
+                                        "--shiki-dark": "#E1E4E8"
+                                    },
+                                    children: "<"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 165,
+                                    columnNumber: 73
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#22863A",
+                                        "--shiki-dark": "#85E89D"
+                                    },
+                                    children: "i"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 168,
+                                    columnNumber: 30
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#6F42C1",
+                                        "--shiki-dark": "#B392F0"
+                                    },
+                                    children: " class"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 171,
+                                    columnNumber: 30
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#24292E",
+                                        "--shiki-dark": "#E1E4E8"
+                                    },
+                                    children: "="
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 174,
+                                    columnNumber: 35
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#032F62",
+                                        "--shiki-dark": "#9ECBFF"
+                                    },
+                                    children: "\"bx bx-heart bx-border-circle bx-sm\""
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 177,
+                                    columnNumber: 30
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#24292E",
+                                        "--shiki-dark": "#E1E4E8"
+                                    },
+                                    children: "></"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 180,
+                                    columnNumber: 67
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#22863A",
+                                        "--shiki-dark": "#85E89D"
+                                    },
+                                    children: "i"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 183,
+                                    columnNumber: 32
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
+                                    style: {
+                                        "--shiki-light": "#24292E",
+                                        "--shiki-dark": "#E1E4E8"
+                                    },
+                                    children: ">"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                                    lineNumber: 186,
+                                    columnNumber: 30
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/content/font/styling/border.mdx.tsx",
+                            lineNumber: 165,
                             columnNumber: 55
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                    lineNumber: 108,
-                    columnNumber: 887
+                    lineNumber: 132,
+                    columnNumber: 1112
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/content/font/styling/border.mdx.tsx",
-                lineNumber: 108,
-                columnNumber: 778
+                lineNumber: 132,
+                columnNumber: 1003
             }, this)
         ]
     }, void 0, true);
@@ -2483,7 +2612,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Colors",
     "filePath": "src/content/font/styling/colors.mdx",
-    "timestamp": 1768555361972
+    "timestamp": 1769581752577
 };
 const sourceCode = "# Colors\n\nBoxicons can be styled using standard CSS, making it easy to change icon colors to match your design system. You can apply colors using the `style` attribute, CSS classes, or inherited styles from parent elements.\n<br/>\n---\n<br/>\n## Basic & Brand Icons\n\nFor Basic and Brand icons, you can set the color using the CSS `color` property. By default, icons inherit the text color of their parent element.\n\nExample:\n\n```html copy\n<i class=\"bx bx-heart\" style=\"color:#fb2d2d\"></i>\n<i class=\"bxl bx-twitter\" style=\"color:#1da1f2\"></i>\n```\n<div className=\"icon-display\">\n    <i className=\"bxdocs bxf-200-heart\" style={{ color: '#fb2d2d' }}></i>\n    <i className=\"bxdocs bx-twitter\" style={{ color: '#1da1f2' }}></i>\n</div>\n\nYou can also control the color using CSS classes:\n```css\ni.bx {\n  color: #fb2d2d;\n}\n```\n\n<br/>\n## Duotone Icons\nDuotone icons are made up of two layers: a primary layer and a secondary layer. You can style each layer independently using CSS variables.\n##### Color variables\n* `--bx-duotone-primary-color`\n* `--bx-duotone-secondary-color`\n##### Opacity variables\n* `--bx-duotone-primary-opacity` default:`1`\n* `--bx-duotone-secondary-opacity` default:`0.4`\n\n```html copy\n<i\n  class=\"bxd bx-heart-break\"\n  style=\"\n    --bx-duotone-primary-color:#2cdc4b;\n    --bx-duotone-primary-opacity:0.9;\n    --bx-duotone-secondary-color:#9d25ff;\n    --bx-duotone-secondary-opacity:0.6;\n  \"\n></i>\n\n<i\n  class=\"bxds bx-heart-break\"\n  style=\"\n    --bx-duotone-primary-opacity:0.9;\n    --bx-duotone-secondary-opacity:0.6;\n  \"\n></i>\n```\n<div className=\"icon-display\">\n    <i className=\"bxdocs bxrd-heart-break\" style={{ '--bx-duotone-primary-color': '#2cdc4b', '--bx-duotone-secondary-color': '#9d25ff', '--bx-duotone-primary-opacity': 0.9, '--bx-duotone-secondary-opacity': 0.6 }}></i>\n    <i className=\"bxdocs bxrds-heart-break\" style={{ '--bx-duotone-primary-opacity': 0.9, '--bx-duotone-secondary-opacity': 0.6 }}></i>\n</div>\n\n\n##### Inverting Layer Opacity\nIf you simply want to swap the opacity values between the two layers, you can use the `bx-invert-opacity` utility class. This inverts the layer opacities without requiring you to manually set any values.\n\n```html copy\n<i class=\"bxd bx-heart-break bx-invert-opacity\"></i>\n<i class=\"bxds bx-heart-break bx-invert-opacity\"></i>\n```\n<div className=\"icon-display\">\n    <i className=\"bxdocs bxrd-heart-break \" style={{ '--bx-duotone-secondary-opacity': 1,'--bx-duotone-primary-opacity': 0.4}}></i>\n    <i className=\"bxdocs bxrds-heart-break \" style={{ '--bx-duotone-secondary-opacity': 1,'--bx-duotone-primary-opacity': 0.4}} ></i>\n</div>";
 function useTOC(props) {
@@ -2933,6 +3062,7 @@ function _createMdxContent(props) {
                 tabIndex: "0",
                 "data-language": "css",
                 "data-word-wrap": "",
+                "data-copy": "",
                 "data-pagefind-ignore": "all",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.code, {
                     children: [
@@ -2947,7 +3077,7 @@ function _createMdxContent(props) {
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/colors.mdx.tsx",
                                     lineNumber: 119,
-                                    columnNumber: 241
+                                    columnNumber: 254
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -2975,7 +3105,7 @@ function _createMdxContent(props) {
                         }, void 0, true, {
                             fileName: "[project]/src/content/font/styling/colors.mdx.tsx",
                             lineNumber: 119,
-                            columnNumber: 223
+                            columnNumber: 236
                         }, this),
                         "\n",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -3052,7 +3182,7 @@ function _createMdxContent(props) {
                 }, void 0, true, {
                     fileName: "[project]/src/content/font/styling/colors.mdx.tsx",
                     lineNumber: 119,
-                    columnNumber: 205
+                    columnNumber: 218
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/content/font/styling/colors.mdx.tsx",
@@ -4013,7 +4143,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$di
 const metadata = {
     "title": "List Icons",
     "filePath": "src/content/font/styling/list.mdx",
-    "timestamp": 1768556383376
+    "timestamp": 1769581752577
 };
 ;
 const sourceCode = "import { Callout } from 'nextra/components'\n\n# List Icons\n\nBoxicons makes it easy to use icons as custom bullets for lists. This is useful for feature lists, checklists, menus, or any place where you want more visual clarity than standard bullet points.\n\nTo enable icon bullets, add the `bx-ul` class to your `<ul>` element and place an icon inside each `<li>` item.\n<br/>\n---\n<Callout type=\"warning\">\n Make sure you have included the transformations stylesheet before using these classes.\n</Callout>\n\n\n```html filename=\"transformations.min.css\" copy\n<link href=\"https://cdn.boxicons.com/transformations.min.css\" rel=\"stylesheet\">\n```\n\n```html copy\n<ul class='bx-ul'>\n<li><i class='bx  bx-right-arrow'></i>List Item 1</li>\n<li><i  class='bx  bx-x'></i>List Item 2</li>\n<li><i  class='bx  bx-plus'></i>List Item 3</li>\n</ul>\n```\n<div className=\"icon-display\">\n<ul className='bx-ul' style={{ fontSize: '24px' }}>\n<li style={{ alignItems: 'center', display: 'flex', gap: '10px' }}><i className='bxdocs  bxrf-200-happy'></i>List Item 1</li>\n<li style={{ alignItems: 'center', display: 'flex', gap: '10px' }}><i className='bxdocs  bxrf-200-shocked'></i>List Item 2</li>\n<li style={{ alignItems: 'center', display: 'flex', gap: '10px' }}><i className='bxdocs  bxrf-200-dizzy'></i>List Item 3</li>\n</ul>\n</div>\n\n#### How it works\n\n* The `bx-ul` class removes the default list styling and aligns icons automatically.\n* Each list item contains an icon element followed by the text.\n* Icons are positioned and spaced consistently so all items line up neatly.\n\nThis ensures proper alignment even when list items wrap onto multiple lines.";
@@ -4973,7 +5103,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Remove Padding",
     "filePath": "src/content/font/styling/padding.mdx",
-    "timestamp": 1768555361972
+    "timestamp": 1769581753647
 };
 const sourceCode = "# Remove Padding\nBoxicons by default come with some padding around the icons to ensure they are visually balanced. However, in certain design scenarios, you might want to remove this padding for a tighter fit.\n\n## How to Remove Padding\nTo remove the default padding from Boxicons, you can add the following CSS class to your icon element:\n`bx-remove-padding`\nThis class eliminates the extra space around the icon, allowing it to fit more snugly within its container.\nNo need to import any additional CSS files; the class is included in the main Boxicons stylesheet.\n```html copy\n<i class=\"bxf bx-golf-ball\">\n<i class=\"bxf bx-golf-ball bx-remove-padding\">\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-golf-ball\" style={{backgroundColor: '#c5ff0a', color: '#000'}}></i>\n<i className=\"bxdocs bxrf-200-golf-ball bx-remove-padding\" style={{backgroundColor: '#c5ff0a', color: '#000'}}></i>\n</div>";
 function useTOC(props) {
@@ -5268,7 +5398,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$di
 const metadata = {
     "title": "Pulled Icons",
     "filePath": "src/content/font/styling/pulled.mdx",
-    "timestamp": 1768556383376
+    "timestamp": 1769581753526
 };
 ;
 const sourceCode = "import { Callout } from 'nextra/components'\n\n# Pulled Icons\n\nPulled icons let you float an icon to the left or right of a block of text, similar to how pull quotes or floated images work in articles. This is useful for highlighting quotes, notes, tips, or callouts inside long-form content.\n<br/>\n---\nBoxicons provides two utility classes for this:\n\n- `bx-pull-left` — floats the icon to the left of the text  \n- `bx-pull-right` — floats the icon to the right of the text  \n\n\n\n<Callout type=\"warning\">\n Make sure you have included the transformations stylesheet before using these classes.\n</Callout>\n\n```html filename=\"transformations.min.css\" copy\n<link href=\"https://cdn.boxicons.com/transformations.min.css\" rel=\"stylesheet\">\n```\n\n```html copy\n<i class=\"bx-pull-left bxf bx-quote-alt-left bx-lg\"></i>\n<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nUt faucibus erat eu nibh laoreet, sed ullamcorper diam ornare. \nQuisque viverra ante nec luctus imperdiet. Quisque ut imperdiet nisi. \nQuisque ultrices laoreet odio, non vestibulum lacus molestie sollicitudin. \nPhasellus nec dolor eget nunc commodo sodales vel vel eros.</span>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-quote-left bx-pull-left bx-lg\"></i>\n<span style={{fontSize: '18px'}}>\nLorem ipsum dolor sit amet, consectetur adipiscing elit. \nUt faucibus erat eu nibh laoreet, sed ullamcorper diam ornare. \nQuisque viverra ante nec luctus imperdiet. Quisque ut imperdiet nisi. \nQuisque ultrices laoreet odio, non vestibulum lacus molestie sollicitudin. \nPhasellus nec dolor eget nunc commodo sodales vel vel eros.\n</span>\n</div>\n\n#### How it works\n\n* The icon is floated to one side of the text.\n* The surrounding text wraps naturally around the icon.\n* Spacing and alignment are handled automatically by the utility class.\n\nThis creates a magazine-style layout that draws attention to important content.";
@@ -5882,7 +6012,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$di
 const metadata = {
     "title": "Rotation & Flipping",
     "filePath": "src/content/font/styling/rotate.mdx",
-    "timestamp": 1768556383413
+    "timestamp": 1769581752704
 };
 ;
 const sourceCode = "import { Callout } from 'nextra/components'\n\n# Rotation & Flipping\n\nBoxicons provides utility classes to easily rotate or flip icons without writing any custom CSS. These transformations are applied using CSS and work consistently across all icon types.\n<br/>\n---\n<Callout type=\"warning\">\n Make sure you have included the transformations stylesheet before using these classes.\n</Callout>\n\n```html filename=\"transformations.min.css\" copy\n<link href=\"https://cdn.boxicons.com/transformations.min.css\" rel=\"stylesheet\">\n```\n\n### Rotating Icons\n\nYou can rotate an icon by applying one of the following classes:\n* `bx-rotate-45` — rotates the icon by 45°\n* `bx-rotate-90` — rotates the icon by 90°\n* `bx-rotate-135` — rotates the icon by 135°\n* `bx-rotate-180` — rotates the icon by 180°\n* `bx-rotate-225` — rotates the icon by 225°    \n* `bx-rotate-270` — rotates the icon by 270°\n* `bx-rotate-315` — rotates the icon by 315°\n\n```html copy\n<i class=\"bxf bx-wink-smile bx-rotate-45\"></i>\n<i class=\"bxf bx-wink-smile bx-rotate-90\"></i>\n<i class=\"bxf bx-wink-smile bx-rotate-135\"></i>\n<i class=\"bxf bx-wink-smile bx-rotate-180\"></i>\n<i class=\"bxf bx-wink-smile bx-rotate-225\"></i>\n<i class=\"bxf bx-wink-smile bx-rotate-270\"></i>\n<i class=\"bxf bx-wink-smile bx-rotate-315\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-45\"></i>\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-90\"></i>\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-135\"></i>\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-180\"></i>\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-225\"></i>\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-270\"></i>\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-315\"></i>\n</div>\n\n### Flipping Icons\n\nYou can also mirror icons horizontally or vertically using the following classes:\n\n* `bx-flip-horizontal` — flips the icon left to right\n\n* `bx-flip-vertical` — flips the icon top to bottom\n\n```html copy\n<i class=\"bxf bx-wink-smile bx-flip-horizontal\"></i>\n<i class=\"bxf bx-wink-smile bx-flip-vertical\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-wink-smile bx-flip-horizontal\"></i>\n<i className=\"bxdocs bxrf-200-wink-smile bx-flip-vertical\"></i>\n</div>\n\n### Combining Transformations\n\nYou can combine rotation and flip classes together to achieve more complex transformations.\n\n```html copy\n<i class=\"bxf bx-wink-smile bx-rotate-90 bx-flip-horizontal\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-wink-smile bx-rotate-90 bx-flip-horizontal\"></i>\n\n</div>";
@@ -7482,7 +7612,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Sizing",
     "filePath": "src/content/font/styling/sizing.mdx",
-    "timestamp": 1768556383376
+    "timestamp": 1769581752379
 };
 const sourceCode = "# Sizing\n\nBoxicons scale just like text. You can control the size of an icon using the CSS `font-size` property, and by default, icons inherit the `font-size` of their parent element.\n\nIn addition to using CSS, Boxicons also provides a set of utility classes for common, consistent icon sizes.\n<br/>\n---\n\n### Using CSS Font Size\n\nYou can resize icons using plain CSS:\n\n```css\ni.bx {\n  font-size: 32px;\n}\n```\nOr inline styles:\n```html copy\n<i class=\"bxf bx-thumb-up\" style=\"font-size: 96px;\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-thumb-up\" style={{ fontSize: '96px' }}></i>\n\n</div>\n\n### Import the transformations CSS\nTo use the following classes, you first need to include the transformations stylesheet.\n\n```html filename=\"transformations.min.css\" copy\n<link href=\"https://cdn.boxicons.com/transformations.min.css\" rel=\"stylesheet\">\n```\n\n### Using Size Utility Classes\nBoxicons provides predefined size classes:\n* `bx-xs`\n* `bx-sm`\n* `bx-md`\n* `bx-lg`\n* `bx-xl`\n* `bx-2xl`\n* `bx-3xl`\n* `bx-4xl`\n* `bx-5xl`\n\n```html copy\n<i class=\"bx bx-thumb-up bx-xs\"></i>\n<i class=\"bx bx-thumb-up bx-sm\"></i>\n<i class=\"bx bx-thumb-up bx-md\"></i>\n<i class=\"bx bx-thumb-up bx-lg\"></i>\n<i class=\"bx bx-thumb-up bx-xl\"></i>\n<i class=\"bx bx-thumb-up bx-2xl\"></i>\n<i class=\"bx bx-thumb-up bx-3xl\"></i>\n<i class=\"bx bx-thumb-up bx-4xl\"></i>\n<i class=\"bx bx-thumb-up bx-5xl\"></i>\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bxrf-200-thumb-up bx-xs\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-sm\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-md\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-lg\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-xl\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-2xl\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-3xl\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-4xl\"></i>\n<i className=\"bxdocs bxrf-200-thumb-up bx-5xl\"></i>\n</div>\nThese classes apply consistent, predefined sizes that work well across common UI layouts.\n\n### Fixed Width Icons\n\nSometimes you need icons to align neatly in lists or menus. For this, you can use the bx-fw (fixed width) utility class, which gives all icons the same width.\nThis is especially useful when placing icons next to text, such as in navigation lists or menus.\n\n```html copy\n<i class=\"bx-fw bxl bx-facebook-square\"></i> Facebook\n```\n<div className=\"icon-display\">\n<i className=\"bxdocs bx-facebook-circle bx-fw\"></i> <span style={{ fontSize: '25px',fontWeight: 600 }}>Facebook</span>\n\n</div>";
 function useTOC(props) {
@@ -7601,6 +7731,7 @@ function _createMdxContent(props) {
                 tabIndex: "0",
                 "data-language": "css",
                 "data-word-wrap": "",
+                "data-copy": "",
                 "data-pagefind-ignore": "all",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.code, {
                     children: [
@@ -7615,7 +7746,7 @@ function _createMdxContent(props) {
                                 }, void 0, false, {
                                     fileName: "[project]/src/content/font/styling/sizing.mdx.tsx",
                                     lineNumber: 44,
-                                    columnNumber: 823
+                                    columnNumber: 836
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
                                     style: {
@@ -7643,7 +7774,7 @@ function _createMdxContent(props) {
                         }, void 0, true, {
                             fileName: "[project]/src/content/font/styling/sizing.mdx.tsx",
                             lineNumber: 44,
-                            columnNumber: 805
+                            columnNumber: 818
                         }, this),
                         "\n",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -7731,7 +7862,7 @@ function _createMdxContent(props) {
                 }, void 0, true, {
                     fileName: "[project]/src/content/font/styling/sizing.mdx.tsx",
                     lineNumber: 44,
-                    columnNumber: 787
+                    columnNumber: 800
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/content/font/styling/sizing.mdx.tsx",
@@ -9367,7 +9498,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$di
 const metadata = {
     "title": "Usage as a Font",
     "filePath": "src/content/font/usage.mdx",
-    "timestamp": 1768556383376
+    "timestamp": 1769581752379
 };
 ;
 ;
@@ -10064,6 +10195,7 @@ function _createMdxContent(props) {
                 tabIndex: "0",
                 "data-language": "html",
                 "data-word-wrap": "",
+                "data-copy": "",
                 "data-pagefind-ignore": "all",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.code, {
                     children: [
@@ -10077,12 +10209,12 @@ function _createMdxContent(props) {
                             }, void 0, false, {
                                 fileName: "[project]/src/content/font/usage.mdx.tsx",
                                 lineNumber: 152,
-                                columnNumber: 1697
+                                columnNumber: 1710
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/content/font/usage.mdx.tsx",
                             lineNumber: 152,
-                            columnNumber: 1679
+                            columnNumber: 1692
                         }, this),
                         "\n",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(_components.span, {
@@ -10379,7 +10511,7 @@ function _createMdxContent(props) {
                 }, void 0, true, {
                     fileName: "[project]/src/content/font/usage.mdx.tsx",
                     lineNumber: 152,
-                    columnNumber: 1661
+                    columnNumber: 1674
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/content/font/usage.mdx.tsx",

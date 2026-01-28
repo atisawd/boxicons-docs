@@ -1,0 +1,179 @@
+import { Callout } from 'nextra/components'   
+
+## Installation
+
+Create an account on [Boxicons Pro](https://boxicons.com/) and obtain your API key.
+Add the following to your `.npmrc` file, replacing `YOUR_API_KEY` with your key which you can find in you [Account Settings](https://boxicons.com/account/settings):
+```bash
+@boxicons-pro:registry=https://npm.boxicons.com/
+//npm.boxicons.com/:_authToken=YOUR_API_KEY
+```
+<Callout type="warning" >
+  Make sure to keep your API key secure and do not expose it in public repositories.
+</Callout>
+
+```bash
+# Using npm
+npm install @boxicons-pro/react
+
+# Using yarn
+yarn add @boxicons-pro/react
+
+# Using pnpm
+pnpm add @boxicons-pro/react
+```
+
+---
+
+## Quick Start
+
+```jsx
+import { Alarm, Home, User } from '@boxicons-pro/react';
+
+function App() {
+  return (
+    <div>
+      <Alarm />
+      <Home size="lg" />
+      <User fill="blue" />
+    </div>
+  );
+}
+```
+
+---
+
+## Import Methods
+
+### Method 1: Named imports (loads all icons)
+
+```jsx
+// ⚠️ This imports the barrel file which includes ALL icons
+// Good for development, but larger bundle size
+import { Alarm, Home, User } from '@boxicons-pro/react';
+```
+
+### Method 2: Direct imports (recommended for production)
+
+```jsx
+// ✅ Only loads the specific icon you need - best for tree-shaking
+import { Alarm } from '@boxicons-pro/react/icons/Alarm';
+import { Home } from '@boxicons-pro/react/icons/Home';
+import { User } from '@boxicons-pro/react/icons/User';
+```
+
+### Method 3: Individual packages (smallest bundle)
+
+```jsx
+// ✅ Pre-filtered by pack/style/weight - smallest possible bundle
+import { Alarm } from '@boxicons-pro/react-basic-regular';
+import { Home } from '@boxicons-pro/react-duotone-rounded-bold';
+```
+
+---
+
+## Icon Packs
+
+Boxicons Pro includes multiple icon packs:
+
+| Pack | Description |
+|------|-------------|
+| `basic` | Simple line icons (default) |
+| `filled` | Solid filled icons |
+| `duotone` | Two-tone icons with primary and secondary colors |
+| `duotone-mix` | Duotone icons with mixed styling |
+| `duotone-solid` | Duotone icons with solid styling |
+| `brands` | Brand and logo icons |
+
+```jsx
+<Alarm pack="basic" />
+<Alarm pack="filled" />
+<Alarm pack="duotone" />
+<Alarm pack="duotone-mix" />
+<Alarm pack="duotone-solid" />
+```
+
+---
+
+## Styles
+
+Each pack (except brands) supports three styles:
+
+| Style | Description |
+|-------|-------------|
+| `regular` | Default rounded corners |
+| `rounded` | More pronounced rounded corners |
+| `sharp` | Sharp, angular corners |
+
+```jsx
+<Alarm style="regular" />
+<Alarm style="rounded" />
+<Alarm style="sharp" />
+```
+
+---
+
+## Weights
+
+Icons come in three weights:
+
+| Weight | Name | Description |
+|--------|------|-------------|
+| 200 | `thin` | Light, thin strokes |
+| 400 | `normal` | Default weight (no suffix needed) |
+| 700 | `bold` | Heavy, bold strokes |
+
+```jsx
+// Using weight names
+<Alarm weight="thin" />
+<Alarm weight="normal" />  // default
+<Alarm weight="bold" />
+
+// Using numeric values
+<Alarm weight={200} />
+<Alarm weight={400} />
+<Alarm weight={700} />
+```
+
+---
+### Naming Convention
+
+Icon names are converted from kebab-case SVG filenames to PascalCase:
+
+| SVG File | Component Name |
+|----------|---------------|
+| `bx-alarm.svg` | `<Alarm />` |
+| `bx-alarm-clock.svg` | `<AlarmClock />` |
+| `bx-twitter.svg` | `<Twitter />` |
+| `bx-8-ball.svg` | `<Icon8Ball />` |
+
+
+
+## Props Reference
+
+### Common Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `pack` | `'basic' \| 'filled' \| 'duotone' \| 'duotone-mix' \| 'duotone-solid' \| 'brands'` | `'basic'` | Icon pack to use |
+| `style` | `'regular' \| 'rounded' \| 'sharp'` | `'regular'` | Icon style variant |
+| `weight` | `'thin' \| 'normal' \| 'bold' \| 200 \| 400 \| 700` | `'normal'` | Icon stroke weight |
+| `size` | `IconSize` | `'base'` | Preset size (see size table below) |
+| `width` | `number \| string` | - | Custom width (overrides size) |
+| `height` | `number \| string` | - | Custom height (overrides size) |
+| `fill` | `string` | `'currentColor'` | Fill color |
+| `opacity` | `number \| string` | - | Overall opacity (0-1) |
+| `flip` | `'horizontal' \| 'vertical'` | - | Flip direction |
+| `rotate` | `number \| string` | - | Rotation in degrees |
+| `removePadding` | `boolean` | `false` | Remove icon padding by adjusting viewBox |
+| `className` | `string` | - | CSS class name |
+| `cssStyle` | `React.CSSProperties` | - | Inline styles object |
+
+### Duotone-specific Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `primaryFill` | `string` | `'currentColor'` | Primary layer fill color |
+| `primaryOpacity` | `number \| string` | `1` | Primary layer opacity |
+| `secondaryFill` | `string` | `'currentColor'` | Secondary layer fill color |
+| `secondaryOpacity` | `number \| string` | `0.4` | Secondary layer opacity |

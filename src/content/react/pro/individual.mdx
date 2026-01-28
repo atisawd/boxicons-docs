@@ -1,0 +1,77 @@
+## Individual Packages
+
+For smaller bundle sizes, you can install only the specific icon packs you need. All packages are scoped under `@boxicons-pro`.
+
+
+### Package Naming Convention
+```
+@boxicons-pro/react-{pack}-{style}[-{weight}]
+```
+
+- Weight is omitted for normal (400) weight
+- `thin` suffix for 200 weight
+- `bold` suffix for 700 weight
+
+### Available Packages
+
+#### Basic Icons
+```bash
+npm install @boxicons-pro/react-basic-regular
+npm install @boxicons-pro/react-basic-regular-thin
+npm install @boxicons-pro/react-basic-regular-bold
+npm install @boxicons-pro/react-basic-rounded
+npm install @boxicons-pro/react-basic-rounded-thin
+npm install @boxicons-pro/react-basic-rounded-bold
+npm install @boxicons-pro/react-basic-sharp
+npm install @boxicons-pro/react-basic-sharp-thin
+npm install @boxicons-pro/react-basic-sharp-bold
+```
+
+#### Filled Icons
+```bash
+npm install @boxicons-pro/react-filled-regular
+npm install @boxicons-pro/react-filled-regular-thin
+npm install @boxicons-pro/react-filled-regular-bold
+npm install @boxicons-pro/react-filled-rounded
+npm install @boxicons-pro/react-filled-sharp
+# ... and more
+```
+
+#### Duotone Icons
+```bash
+npm install @boxicons-pro/react-duotone-regular
+npm install @boxicons-pro/react-duotone-regular-thin
+npm install @boxicons-pro/react-duotone-regular-bold
+npm install @boxicons-pro/react-duotone-rounded
+npm install @boxicons-pro/react-duotone-sharp
+# ... and more
+```
+---
+
+#### Brands
+```bash
+npm install @boxicons-pro/react-brands
+```
+
+---
+
+### Usage with Individual Packages
+
+```jsx
+// Import from specific package
+import { Alarm } from '@boxicons-pro/react-basic-regular';
+import { Heart } from '@boxicons-pro/react-filled-rounded-bold';
+import { Bell } from '@boxicons-pro/react-duotone-solid-sharp-thin';
+import { Github } from '@boxicons-pro/react-brands';
+
+function App() {
+  return (
+    <div>
+      <Alarm size="lg" />
+      <Heart size="lg" fill="red" />
+      <Bell size="lg" primaryFill="#3b82f6" secondaryFill="#93c5fd" />
+      <Github size="lg" />
+    </div>
+  );
+}
+```

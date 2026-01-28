@@ -1,0 +1,30 @@
+
+import { Cards } from 'nextra/components'
+import {BoxCard} from '../../components/BoxCard'
+import Link from 'next/link'
+
+# Boxicons React Package
+
+React icon library built from Boxicons SVG files with full tree-shaking support.
+There are two versions available: Free and Pro.
+Free version includes basic and filled icon packs (1 style & weight), while Pro unlocks all icon packs, styles, and weights. Both include brands pack.
+They can be installed with two commands and used in the similar way.
+
+The Icon Components are Tree-shakable, so only the icons you import will be included in your final bundle.
+<br/>
+
+---
+<br/>
+<Cards >
+<BoxCard
+    icon={<i className="bxdocs bx-react bx-md absolute right-5 top-5 opacity-50" />}
+    title="Free Package"
+    href="/react/free/install"
+    description="Use basic and filled icon packs with the free version of Boxicons React package."
+  /><BoxCard
+    icon={<i className="bxdocs bx-react bx-md absolute right-5 top-5 opacity-50" />}
+    title="Pro Package"
+    href="/react/pro/install"
+    description="Use all icon packs, styles, and weights with the Pro version of Boxicons React package. "
+  />
+</Cards>

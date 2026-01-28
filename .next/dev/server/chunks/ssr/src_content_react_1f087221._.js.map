@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/aniketsuvarna/Desktop/boxicons/boxicons-docs/src/content/react/_meta.js"],"sourcesContent":["export default {\n  install: {\n   title: 'Install React Package',\n  },\n  free: {\n   title: 'Free Package',\n  },\n  pro:{\n    title: 'Pro Package',\n  }\n}\n"],"names":[],"mappings":";;;;uCAAe;IACb,SAAS;QACR,OAAO;IACR;IACA,MAAM;QACL,OAAO;IACR;IACA,KAAI;QACF,OAAO;IACT;AACF"}},
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}}]
+}
