@@ -1,7 +1,16 @@
-[00:00:00.844] Server  LOG     ✓ Ready in 594ms
-[00:00:04.597] Server  LOG     ○ Compiling /[[...mdxPath]] ...
-[00:03:18.912] Server  LOG     ✓ Compiled in 168ms
-[00:09:11.921] Server  LOG     ✓ Compiled in 626ms
-[00:11:46.603] Browser WARN    Image with src "/file.svg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:13:49.465] Server  LOG     ✓ Compiled in 180ms
+[00:00:00.481] Server  LOG     ✓ Ready in 344ms
+[00:00:31.104] Server  LOG     ✓ Compiled in 130ms
+[00:01:29.015] Server  LOG     ✓ Compiled in 142ms
+[00:01:42.453] Server  LOG     ✓ Compiled in 146ms
+[00:01:48.906] Server  LOG     ✓ Compiled in 153ms
+[00:01:50.491] Server  LOG     ✓ Compiled in 139ms
+[00:01:54.775] Server  LOG     ✓ Compiled in 157ms
+[00:01:58.286] Server  LOG     ✓ Compiled in 119ms
+[00:03:01.147] Server  LOG     ✓ Compiled in 144ms
+[00:03:09.320] Server  LOG     ✓ Compiled in 100ms
+[00:03:29.813] Server  LOG     ✓ Compiled in 117ms
+[00:03:33.724] Server  LOG     ✓ Compiled in 105ms
+[00:03:35.789] Server  LOG     ✓ Compiled in 84ms
+[00:03:40.049] Server  LOG     ✓ Compiled in 120ms
+[00:03:46.457] Server  LOG     ✓ Compiled in 137ms
+[00:04:02.109] Server  LOG     ✓ Compiled in 130ms
