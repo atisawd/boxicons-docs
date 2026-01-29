@@ -111,7 +111,7 @@ article .nextra-breadcrumb {
   background-color: transparent !important;
 }
 .nextra-card:where(.dark *){
-  background-color: #0d111b !important;
+  background-color: #141414 !important;
   border:0px solid #141414 !important;
 }
 .nextra-card:where(.dark *):hover{
