@@ -1,0 +1,261 @@
+# Installation
+
+Vue 3 icon components built from Boxicons SVG files with full tree-shaking support.
+
+## Installation
+
+```bash
+npm install @boxicons/vue
+# or
+yarn add @boxicons/vue
+# or
+pnpm add @boxicons/vue
+```
+
+## Peer Dependency
+
+Make sure you have Vue 3 installed:
+
+```bash
+npm install vue@^3.0.0
+```
+
+## Usage
+
+### Basic Usage
+
+```vue
+<script setup>
+import { Alarm, Twitter, Home } from '@boxicons/vue';
+</script>
+
+<template>
+  <div>
+    <Alarm />
+    <Twitter />
+    <Home />
+  </div>
+</template>
+```
+
+### Icon Packs
+
+Each icon can have multiple variants. Use the `pack` prop to switch between them:
+
+- **basic** - Outline/regular style icons (default for most icons)
+- **filled** - Solid/filled style icons
+- **brands** - Brand/logo icons (default for brand icons like Twitter, Facebook, etc.)
+
+```vue
+<script setup>
+import { Alarm } from '@boxicons/vue';
+</script>
+
+<template>
+  <div>
+    <!-- Basic/outline style (default) -->
+    <Alarm />
+    
+    <!-- Filled style -->
+    <Alarm pack="filled" />
+  </div>
+</template>
+```
+
+### Combining Props
+
+All props can be combined:
+
+```vue
+<Alarm 
+  pack="filled"
+  fill="#ffffff"
+  :opacity="0.8"
+  size="lg"
+  flip="horizontal"
+  :rotate="45"
+  class="my-icon"
+  style="margin: 8px"
+/>
+```
+
+### Standard SVG Props
+
+All standard SVG props are supported and passed through to the underlying `<svg>` element:
+
+```vue
+<Alarm 
+  class="icon"
+  id="my-alarm-icon"
+  aria-label="Alarm"
+  role="img"
+  @click="handleClick"
+/>
+```
+
+## Tree Shaking
+
+This library is fully tree-shakeable. Only the icons you import will be included in your final bundle.
+
+```vue
+<script setup>
+// ✅ Only Alarm is bundled
+import { Alarm } from '@boxicons/vue';
+
+// ✅ Direct import also works
+import { Alarm } from '@boxicons/vue/icons/Alarm';
+</script>
+```
+
+### Naming Convention
+
+Icon names use PascalCase:
+
+| Icon Name | Usage |
+|-----------|-------|
+| `Alarm` | `<Alarm />` |
+| `AlarmClock` | `<AlarmClock />` |
+| `Twitter` | `<Twitter />` |
+
+## TypeScript
+
+Full TypeScript support with exported types:
+
+```vue
+<script setup lang="ts">
+import { Alarm, type BoxIconProps } from '@boxicons/vue';
+
+const props: BoxIconProps = {
+  size: 'lg',
+  fill: 'red'
+};
+</script>
+```
+
+### BoxIconProps
+
+```typescript
+interface BoxIconProps extends SVGAttributes<SVGSVGElement> {
+  pack?: 'basic' | 'filled' | 'brands';
+  fill?: string;
+  opacity?: number | string;
+  width?: number | string;
+  height?: number | string;
+  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+  flip?: 'horizontal' | 'vertical';
+  rotate?: number | string;
+  removePadding?: boolean;
+}
+```
+
+## Testing
+
+The package has been thoroughly tested to ensure component integrity and functionality. When testing in your Vue projects:
+
+### Component Testing with Vitest
+
+```vue
+<script setup>
+import { describe, it, expect } from 'vitest';
+import { mount } from '@testing-library/vue';
+import { Alarm } from '@boxicons/vue';
+
+describe('Boxicons Vue Integration', () => {
+  it('should render icon component', () => {
+    const { container } = mount(Alarm);
+    const svg = container.querySelector('svg');
+    
+    expect(svg).toBeTruthy();
+    expect(svg.getAttribute('xmlns')).toBe('http://www.w3.org/2000/svg');
+    expect(svg.getAttribute('viewBox')).toBe('0 0 24 24');
+  });
+
+  it('should apply props correctly', () => {
+    const { container } = mount(Alarm, {
+      props: {
+        fill: 'red',
+        size: 'lg'
+      }
+    });
+    
+    const svg = container.querySelector('svg');
+    expect(svg.getAttribute('fill')).toBe('red');
+    expect(svg.getAttribute('width')).toBe('32');
+  });
+
+  it('should support pack variants', () => {
+    const { container } = mount(Alarm, {
+      props: { pack: 'filled' }
+    });
+    
+    const svg = container.querySelector('svg');
+    expect(svg).toBeTruthy();
+    // Filled variant should have different path data
+  });
+});
+```
+
+## Best Practices
+
+### Performance
+
+- **Tree-shake effectively**: Only import icons you use in each component
+- **Use dynamic imports**: For icons loaded conditionally, use dynamic imports
+- **Avoid reactive pack switching**: If possible, use separate components instead of reactive pack prop
+
+### Composition API
+
+Leverage Vue 3's Composition API for better organization:
+
+```vue
+<script setup>
+import { computed } from 'vue';
+import { Alarm, Home, Menu } from '@boxicons/vue';
+
+const icons = {
+  Alarm,
+  Home,
+  Menu
+};
+
+const currentIcon = computed(() => icons[props.iconName]);
+</script>
+
+<template>
+  <component :is="currentIcon" v-bind="iconProps" />
+</template>
+```
+
+### Accessibility
+
+Always provide accessible labels:
+
+```vue
+<Alarm 
+  aria-label="Alarm clock icon"
+  role="img"
+/>
+```
+
+## Common Issues
+
+### Icons not rendering
+
+If icons don't appear, check:
+1. Vue 3 is installed (`vue@^3.0.0`)
+2. Icons are properly imported
+3. No conflicting CSS that might hide SVGs
+
+### TypeScript errors
+
+Ensure you have the latest TypeScript definitions:
+
+```bash
+npm install --save-dev @types/node
+```
+
+### SSR/Nuxt compatibility
+
+The package works with Nuxt 3 out of the box. No additional configuration needed.
+
+# @boxicons/vue

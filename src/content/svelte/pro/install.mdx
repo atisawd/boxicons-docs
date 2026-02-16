@@ -1,0 +1,263 @@
+import { Callout } from 'nextra/components'
+
+# Svelte Pro Package
+
+The Boxicons Pro Svelte package provides native Svelte 4+ components for the complete library of 50,000+ icon variations. Optimized for Svelte's compilation model, it ensures minimal runtime overhead and full tree-shaking.
+
+## Installation
+
+To access the Pro registry, configure your `.npmrc` file with your API key. You can find your key in your [Account Settings](https://boxicons.com/account/settings).
+
+1. Add the following to your `.npmrc`:
+```bash
+@boxicons-pro:registry=https://npm.boxicons.com/
+//npm.boxicons.com/:_authToken=YOUR_API_KEY
+```
+<Callout type="warning">
+  Ensure your API key remains secure. Avoid committing it directly to public repositories; consider using environment variables for CI/CD environments.
+</Callout>
+
+
+2. Install the main package:
+```bash
+# Using npm
+npm install @boxicons-pro/svelte
+
+# Using yarn
+yarn add @boxicons-pro/svelte
+
+# Using pnpm
+pnpm add @boxicons-pro/svelte
+```
+
+## Peer Dependencies
+
+Ensure you are using **Svelte 4.0.0** or higher:
+```bash
+npm install svelte@^4.0.0
+```
+
+---
+
+## Quick Start
+
+```svelte
+<script>
+  import { Alarm, Home, User } from '@boxicons-pro/svelte';
+</script>
+
+<div class="icon-container">
+  <Alarm size="lg" />
+  <Home fill="#3b82f6" weight="thin" />
+  <User pack="filled" style="rounded" />
+</div>
+```
+
+---
+
+## Performance & SSR
+
+Boxicons Pro Svelte works seamlessly with SvelteKit and other SSR frameworks.
+
+### Tree-Shaking
+Vite and Rollup will automatically remove any unused icons from your final build, keeping your client-side bundle as light as possible.
+```javascript
+import { Alarm, Home } from '@boxicons-pro/svelte';
+```
+
+### Granular Usage
+For extreme optimization, you can import from specific pack/style/weight variants.
+```javascript
+import { Alarm } from '@boxicons-pro/svelte-basic-regular-bold';
+```
+
+---
+
+## Icon Packs
+
+Boxicons Pro includes multiple icon packs:
+
+| Pack | Description |
+|------|-------------|
+| `basic` | Simple line icons (default) |
+| `filled` | Solid filled icons |
+| `duotone` | Two-tone icons with primary and secondary colors |
+| `duotone-mix` | Duotone icons with mixed styling |
+| `duotone-solid` | Duotone icons with solid styling |
+| `brands` | Brand and logo icons |
+
+```svelte
+<Alarm pack="basic" />
+<Alarm pack="filled" />
+<Alarm pack="duotone" />
+<Alarm pack="duotone-mix" />
+<Alarm pack="duotone-solid" />
+```
+
+---
+
+## Styles
+
+Each pack (except brands) supports three styles:
+
+| Style | Description |
+|-------|-------------|
+| `regular` | Default rounded corners |
+| `rounded` | More pronounced rounded corners |
+| `sharp` | Sharp, angular corners |
+
+```svelte
+<Alarm style="regular" />
+<Alarm style="rounded" />
+<Alarm style="sharp" />
+```
+
+---
+
+## Weights
+
+Icons come in three weights:
+
+| Weight | Name | Description |
+|--------|------|-------------|
+| 200 | `thin` | Light, thin strokes |
+| 400 | `normal` | Default weight (no suffix needed) |
+| 700 | `bold` | Heavy, bold strokes |
+
+```svelte
+<!-- Using weight names -->
+<Alarm weight="thin" />
+<Alarm weight="normal" />  <!-- default -->
+<Alarm weight="bold" />
+
+<!-- Using numeric values -->
+<Alarm weight={200} />
+<Alarm weight={400} />
+<Alarm weight={700} />
+```
+
+---
+
+## Duotone Icons
+
+Duotone icons support separate colors and opacities for primary and secondary layers:
+
+```svelte
+<Alarm 
+  pack="duotone"
+  primaryFill="#3b82f6"
+  primaryOpacity={1}
+  secondaryFill="#93c5fd"
+  secondaryOpacity={0.4}
+/>
+```
+
+---
+
+## Props Reference
+
+### Common Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `pack` | `'basic' \| 'filled' \| 'duotone' \| 'duotone-mix' \| 'duotone-solid' \| 'brands'` | `'basic'` | Icon pack to use |
+| `style` | `'regular' \| 'rounded' \| 'sharp'` | `'regular'` | Icon style variant |
+| `weight` | `'thin' \| 'normal' \| 'bold' \| 200 \| 400 \| 700` | `'normal'` | Icon stroke weight |
+| `size` | `IconSize` | `'base'` | Preset size |
+| `width` | `number \| string` | - | Custom width (overrides size) |
+| `height` | `number \| string` | - | Custom height (overrides size) |
+| `fill` | `string` | `'currentColor'` | Fill color |
+| `opacity` | `number \| string` | - | Overall opacity (0-1) |
+| `flip` | `'horizontal' \| 'vertical'` | - | Flip direction |
+| `rotate` | `number \| string` | - | Rotation in degrees |
+| `removePadding` | `boolean` | `false` | Remove icon padding by adjusting viewBox |
+
+### Duotone-specific Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `primaryFill` | `string` | `'currentColor'` | Primary layer fill color |
+| `primaryOpacity` | `number \| string` | `1` | Primary layer opacity |
+| `secondaryFill` | `string` | `'currentColor'` | Secondary layer fill color |
+| `secondaryOpacity` | `number \| string` | `0.4` | Secondary layer opacity |
+
+---
+
+## Testing
+
+Test your Pro icon integration:
+
+```javascript
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/svelte';
+import { Alarm } from '@boxicons-pro/svelte';
+
+describe('Boxicons Pro Svelte Integration', () => {
+  it('should support all packs', () => {
+    const basic = render(Alarm, { props: { pack: 'basic' } });
+    const filled = render(Alarm, { props: { pack: 'filled' } });
+    const duotone = render(Alarm, { props: { pack: 'duotone' } });
+    
+    expect(basic.container.querySelector('svg')).toBeTruthy();
+    expect(filled.container.querySelector('svg')).toBeTruthy();
+    expect(duotone.container.querySelector('svg')).toBeTruthy();
+  });
+
+  it('should support styles and weights', () => {
+    const { container } = render(Alarm, {
+      props: {
+        style: 'rounded',
+        weight: 'bold'
+      }
+    });
+    
+    expect(container.querySelector('svg')).toBeTruthy();
+  });
+
+  it('should support duotone colors', () => {
+    const { container } = render(Alarm, {
+      props: {
+        pack: 'duotone',
+        primaryFill: '#3b82f6',
+        secondaryFill: '#93c5fd'
+      }
+    });
+    
+    const svg = container.querySelector('svg');
+    expect(svg).toBeTruthy();
+  });
+});
+```
+
+## Best Practices
+
+### Component Composition
+
+Create reusable icon wrappers with dynamic pack/style/weight:
+
+```svelte
+<script>
+  import { Alarm, Home, Menu } from '@boxicons-pro/svelte';
+  
+  export let name;
+  export let pack = 'basic';
+  export let style = 'regular';
+  export let weight = 'normal';
+  
+  const icons = { Alarm, Home, Menu };
+  $: Icon = icons[name];
+</script>
+
+<svelte:component 
+  this={Icon} 
+  {pack}
+  {style}
+  {weight}
+/>
+```
+
+## SvelteKit
+
+No additional configuration is needed for SvelteKit. The package works out of the box with full SSR support.
+
+# @boxicons-pro/svelte

@@ -1,0 +1,273 @@
+# Installation
+
+Svelte icon components built from Boxicons SVG files with full tree-shaking support.
+
+## Installation
+
+```bash
+npm install @boxicons/svelte
+# or
+yarn add @boxicons/svelte
+# or
+pnpm add @boxicons/svelte
+```
+
+## Peer Dependency
+
+Make sure you have Svelte 4+ installed:
+
+```bash
+npm install svelte@^4.0.0
+```
+
+## Usage
+
+### Basic Usage
+
+```svelte
+<script>
+  import { Alarm, Twitter, Home } from '@boxicons/svelte';
+</script>
+
+<div>
+  <Alarm />
+  <Twitter />
+  <Home />
+</div>
+```
+
+### Icon Packs
+
+Each icon can have multiple variants. Use the `pack` prop to switch between them:
+
+- **basic** - Outline/regular style icons (default for most icons)
+- **filled** - Solid/filled style icons
+- **brands** - Brand/logo icons (default for brand icons like Twitter, Facebook, etc.)
+
+```svelte
+<script>
+  import { Alarm } from '@boxicons/svelte';
+</script>
+
+<div>
+  <!-- Basic/outline style (default) -->
+  <Alarm />
+  
+  <!-- Filled style -->
+  <Alarm pack="filled" />
+</div>
+```
+
+### Combining Props
+
+All props can be combined:
+
+```svelte
+<Alarm 
+  pack="filled"
+  fill="#ffffff"
+  opacity={0.8}
+  size="lg"
+  flip="horizontal"
+  rotate={45}
+  class="my-icon"
+  style="margin: 8px"
+/>
+```
+
+### Standard SVG Props
+
+All standard SVG props are supported and passed through to the underlying `<svg>` element:
+
+```svelte
+<Alarm 
+  class="icon"
+  id="my-alarm-icon"
+  aria-label="Alarm"
+  role="img"
+  on:click={handleClick}
+/>
+```
+
+## Tree Shaking
+
+This library is fully tree-shakeable. Only the icons you import will be included in your final bundle.
+
+```svelte
+<script>
+  // ✅ Only Alarm is bundled
+  import { Alarm } from '@boxicons/svelte';
+
+  // ✅ Direct import also works
+  import Alarm from '@boxicons/svelte/icons/Alarm.svelte';
+</script>
+```
+
+### Naming Convention
+
+Icon names use PascalCase:
+
+| Icon Name | Usage |
+|-----------|-------|
+| `Alarm` | `<Alarm />` |
+| `AlarmClock` | `<AlarmClock />` |
+| `Twitter` | `<Twitter />` |
+
+## TypeScript
+
+Full TypeScript support with exported types:
+
+```svelte
+<script lang="ts">
+  import { Alarm, type BoxIconProps } from '@boxicons/svelte';
+  
+  const props: BoxIconProps = {
+    size: 'lg',
+    fill: 'red'
+  };
+</script>
+
+<Alarm {...props} />
+```
+
+### BoxIconProps
+
+```typescript
+interface BoxIconProps extends SVGAttributes<SVGSVGElement> {
+  pack?: 'basic' | 'filled' | 'brands';
+  fill?: string;
+  opacity?: number | string;
+  width?: number | string;
+  height?: number | string;
+  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+  flip?: 'horizontal' | 'vertical';
+  rotate?: number | string;
+  removePadding?: boolean;
+}
+```
+
+## SvelteKit
+
+No additional configuration is needed for SvelteKit. The package works out of the box.
+
+## Testing
+
+The package has been comprehensively tested to ensure component integrity. When testing in your Svelte projects:
+
+### Component Testing with Vitest
+
+```javascript
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/svelte';
+import { Alarm } from '@boxicons/svelte';
+
+describe('Boxicons Svelte Integration', () => {
+  it('should render icon component', () => {
+    const { container } = render(Alarm);
+    const svg = container.querySelector('svg');
+    
+    expect(svg).toBeTruthy();
+    expect(svg.getAttribute('xmlns')).toBe('http://www.w3.org/2000/svg');
+    expect(svg.getAttribute('viewBox')).toBe('0 0 24 24');
+  });
+
+  it('should apply props correctly', () => {
+    const { container } = render(Alarm, {
+      props: {
+        fill: 'red',
+        size: 'lg'
+      }
+    });
+    
+    const svg = container.querySelector('svg');
+    expect(svg.getAttribute('fill')).toBe('red');
+    expect(svg.getAttribute('width')).toBe('32');
+  });
+
+  it('should support pack variants', () => {
+    const { container } = render(Alarm, {
+      props: { pack: 'filled' }
+    });
+    
+    const svg = container.querySelector('svg');
+    expect(svg).toBeTruthy();
+    // Filled variant should have different path data
+  });
+});
+```
+
+## Best Practices
+
+### Performance
+
+- **Tree-shake effectively**: Only import icons you use
+- **Use dynamic imports**: For conditional icon loading
+- **Avoid reactive pack switching**: Use separate components when possible
+
+### Component Composition
+
+Create reusable icon wrappers:
+
+```svelte
+<script>
+  import { Alarm, Home, Menu } from '@boxicons/svelte';
+  
+  export let name;
+  export let props = {};
+  
+  const icons = { Alarm, Home, Menu };
+  $: Icon = icons[name];
+</script>
+
+<svelte:component this={Icon} {...props} />
+```
+
+### Accessibility
+
+Always provide accessible labels:
+
+```svelte
+<Alarm 
+  aria-label="Alarm clock icon"
+  role="img"
+/>
+```
+
+## Common Issues
+
+### Icons not rendering
+
+If icons don't appear, verify:
+1. Svelte 4+ is installed (`svelte@^4.0.0`)
+2. Icons are properly imported
+3. No conflicting CSS hiding SVGs
+
+### TypeScript errors
+
+Ensure proper TypeScript configuration in `svelte.config.js`:
+
+```javascript
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+export default {
+  preprocess: vitePreprocess()
+};
+```
+
+### SvelteKit SSR
+
+The package is fully compatible with SvelteKit's SSR. Icons render correctly on both server and client.
+
+### Vite configuration
+
+If using Vite, ensure the Svelte plugin is configured:
+
+```javascript
+import { svelte } from '@sveltejs/vite-plugin-svelte';
+
+export default {
+  plugins: [svelte()]
+};
+```
+
+# @boxicons/svelte

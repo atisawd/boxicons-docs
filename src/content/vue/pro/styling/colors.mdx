@@ -1,0 +1,38 @@
+# Colors
+
+Use the `fill` prop to change the icon color (defaults to `currentColor`):
+
+```vue
+<Alarm fill="#ff0000" />
+<Alarm fill="rgb(0, 128, 255)" />
+<Alarm fill="currentColor" /> <!-- Inherits text color -->
+```
+
+#### Customizing Duotone Colors
+
+```vue
+<!-- Customizing duotone each layer color and opacity -->
+<Alarm 
+  pack="duotone"
+  primaryFill="#1E40AF"
+  :primaryOpacity="1"
+  secondaryFill="#3B82F6"
+  :secondaryOpacity="0.4"
+/>
+
+<!-- Customizing duotone whole svg -->
+<Alarm 
+  pack="duotone"
+  fill="#3B82F6"
+  :opacity="0.8"
+/>
+```
+
+### Opacity
+
+Control transparency with the `opacity` prop:
+
+```vue
+<Alarm :opacity="0.5" />
+<Alarm opacity="0.75" />
+```

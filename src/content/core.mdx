@@ -1,0 +1,154 @@
+# Core Package
+
+The `@boxicons/core` package is the foundation of the Boxicons ecosystem. It contains all icon SVGs, font files, and the SKILL.md documentation used by AI assistants. This package serves as the source of truth for all other Boxicons packages.
+
+## Installation
+
+```bash
+npm install @boxicons/core
+```
+
+## Contents
+
+The core package provides three main assets:
+
+### 1. SKILL.md
+
+The **SKILL.md** file is documentation designed specifically for AI assistants (Cursor, Claude, GitHub Copilot, etc.). It contains:
+
+- **System Status**: Current version, total icon count, last update date
+- **Icon Catalog**: Complete listing of all 2,179 icons across packs (Basic, Filled, Brands)
+- **Installation Matrix**: All FREE and PRO packages with install commands
+- **Usage Standards**: Props, naming conventions, and framework-specific examples
+- **Maintenance Workflows**: How to add new icons and SVG standards
+
+#### Using SKILL.md
+
+The CLI automatically offers to install SKILL.md to your project:
+
+```bash
+boxicons
+# ... follow prompts ...
+? Would you like to add SKILL.md for AI assistance? YES
+? Where would you like to store SKILL.md? .cursor/skills/boxicons/SKILL.md
+```
+
+This helps AI assistants in your IDE provide accurate Boxicons suggestions.
+
+**Manual Installation:**
+
+```bash
+# Copy SKILL.md to your AI skills directory
+cp node_modules/@boxicons/core/SKILL.md .cursor/skills/boxicons/SKILL.md
+```
+
+### 2. SVG Icons
+
+All icon SVGs are located in the `svg/` directory, organized by pack:
+
+```
+svg/
+├── basic/          # 1,884 outline icons
+│   ├── bx-user.svg
+│   ├── bx-home.svg
+│   └── ...
+├── filled/         # 1,884 solid icons
+│   ├── bx-user.svg
+│   ├── bx-home.svg
+│   └── ...
+└── brands/         # 295 brand logos
+    ├── bx-github.svg
+    ├── bx-twitter.svg
+    └── ...
+```
+
+#### Accessing SVGs Programmatically
+
+```javascript
+// Get SVG content
+const fs = require('fs');
+const svgContent = fs.readFileSync(
+  'node_modules/@boxicons/core/svg/basic/bx-user.svg',
+  'utf8'
+);
+
+// Or use the core utility
+const { icons } = require('@boxicons/core');
+console.log(icons); // Array of all icon names
+```
+
+#### SVG Standards
+
+All SVGs in the core package follow strict standards:
+
+- **ViewBox**: `0 0 24 24`
+- **Dimensions**: No hardcoded width/height (use CSS)
+- **Colors**: Use `currentColor` for theming
+- **Naming**: `bx-{name}.svg` (kebab-case)
+
+### 3. Font Files
+
+Icon fonts are available in the `dist/fonts/` directory:
+
+```
+dist/fonts/
+├── boxicons.eot
+├── boxicons.svg
+├── boxicons.ttf
+├── boxicons.woff
+├── boxicons.woff2
+└── boxicons.css
+```
+
+#### Using the Font
+
+**CDN (Recommended):**
+```html
+<link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+```
+
+**Local Installation:**
+```bash
+# Copy fonts to your project
+cp -r node_modules/@boxicons/core/dist/fonts ./public/fonts
+```
+
+```html
+<!-- In your HTML -->
+<link href="/fonts/boxicons.css" rel="stylesheet">
+
+<!-- Usage -->
+<i class="bx bx-user"></i>      <!-- Basic -->
+<i class="bxf bx-user"></i>     <!-- Filled -->
+<i class="bxl bx-github"></i>   <!-- Brands -->
+```
+
+#### Font CSS Classes
+
+| Class Prefix | Pack | Example |
+|-------------|------|---------|
+| `bx` | Basic (outline) | `<i class="bx bx-user">` |
+| `bxf` | Filled (solid) | `<i class="bxf bx-user">` |
+| `bxl` | Brands | `<i class="bxl bx-github">` |
+
+## Package Structure
+
+```
+@boxicons/core/
+├── svg/
+│   ├── basic/         # Outline icons
+│   ├── filled/        # Solid icons
+│   └── brands/        # Brand logos
+├── dist/
+│   └── fonts/         # Icon font files
+├── SKILL.md           # AI documentation
+├── icons.json         # Icon manifest
+└── package.json
+```
+
+## Why Use Core?
+
+- **Source of Truth**: All other packages derive from core
+- **Direct Access**: Get raw SVGs and fonts without framework overhead
+- **AI Support**: SKILL.md helps AI assistants understand your icon system
+- **Customization**: Build your own icon pipeline from source SVGs

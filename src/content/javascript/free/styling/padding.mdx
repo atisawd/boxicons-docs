@@ -1,0 +1,46 @@
+# Remove Padding
+
+## Using createSvgString/createElement
+
+Remove the default 2px padding around icons for a tighter fit:
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons/js';
+
+const noPadding = createSvgString(Alarm, { removePadding: true });
+```
+
+## Using Auto-Replace (getIcons)
+
+When using the auto-replace feature with `getIcons()`, add the data attribute to your HTML elements:
+
+```html
+<!-- Default padding (viewBox: 0 0 24 24) -->
+<i data-bx="alarm"></i>
+
+<!-- Remove padding (viewBox: 2 2 20 20) -->
+<i data-bx="alarm" data-remove-padding="true"></i>
+```
+
+```javascript
+import { getIcons, Alarm } from '@boxicons/js';
+
+// Replace all elements with data-bx attribute
+getIcons({
+  icons: { Alarm }
+});
+```
+
+### Available Data Attribute
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| `data-remove-padding` | Remove 2px padding (true/false) | `data-remove-padding="true"` |
+
+## When to Use
+
+Use `removePadding` when you want:
+
+- Edge-to-edge icon alignment
+- Precise control over spacing
+- Consistent sizing with custom layouts

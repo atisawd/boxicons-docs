@@ -1,16 +1,29 @@
-[00:00:00.481] Server  LOG     ✓ Ready in 344ms
-[00:00:31.104] Server  LOG     ✓ Compiled in 130ms
-[00:01:29.015] Server  LOG     ✓ Compiled in 142ms
-[00:01:42.453] Server  LOG     ✓ Compiled in 146ms
-[00:01:48.906] Server  LOG     ✓ Compiled in 153ms
-[00:01:50.491] Server  LOG     ✓ Compiled in 139ms
-[00:01:54.775] Server  LOG     ✓ Compiled in 157ms
-[00:01:58.286] Server  LOG     ✓ Compiled in 119ms
-[00:03:01.147] Server  LOG     ✓ Compiled in 144ms
-[00:03:09.320] Server  LOG     ✓ Compiled in 100ms
-[00:03:29.813] Server  LOG     ✓ Compiled in 117ms
-[00:03:33.724] Server  LOG     ✓ Compiled in 105ms
-[00:03:35.789] Server  LOG     ✓ Compiled in 84ms
-[00:03:40.049] Server  LOG     ✓ Compiled in 120ms
-[00:03:46.457] Server  LOG     ✓ Compiled in 137ms
-[00:04:02.109] Server  LOG     ✓ Compiled in 130ms
+[00:00:00.819] Server  LOG     ✓ Ready in 635ms
+[00:07:01.268] Browser ERROR   ./src/content/_meta.js:45:5
+Parsing ecmascript source code failed
+  43 |         )
+  44 |     }
+> 45 |     '----':{
+     |     ^^^^^^
+  46 |         "type": "separator",
+  47 |     },
+  48 |     font: {
+
+Expected ',', got 'string literal'
+
+Import traces:
+  #1 [Server Component]:
+    ./src/content/_meta.js
+    ./node_modules/nextra/dist/client/pages.js
+    ./src/app/[[...mdxPath]]/page.tsx
+
+  #2 [Server Component]:
+    ./src/content/_meta.js
+    ./node_modules/nextra/dist/server/page-map/placeholder.js
+    ./node_modules/nextra/dist/server/page-map/get.js
+    ./src/app/layout.tsx
+[00:32:24.772] Server  LOG     ✓ Compiled in 2.9s
+[00:33:10.150] Server  LOG     ✓ Compiled in 441ms
+[00:34:20.548] Server  LOG     ✓ Compiled in 230ms
+[00:37:14.398] Server  LOG     ✓ Compiled in 430ms
+[00:38:44.222] Server  LOG     ✓ Compiled in 277ms

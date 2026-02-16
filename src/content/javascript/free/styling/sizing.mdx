@@ -1,0 +1,66 @@
+# Sizing
+
+## Using createSvgString/createElement
+
+### Size Presets
+
+Use the `size` option for convenient preset sizes:
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons/js';
+
+const xs = createSvgString(Alarm, { size: 'xs' });   // 16px
+const sm = createSvgString(Alarm, { size: 'sm' });   // 20px
+const base = createSvgString(Alarm, { size: 'base' }); // 24px (default)
+const md = createSvgString(Alarm, { size: 'md' });   // 36px
+const lg = createSvgString(Alarm, { size: 'lg' });   // 48px
+const xl = createSvgString(Alarm, { size: 'xl' });   // 64px
+const xxl = createSvgString(Alarm, { size: '2xl' });  // 96px
+const xxxl = createSvgString(Alarm, { size: '3xl' });  // 128px
+const xxxxl = createSvgString(Alarm, { size: '4xl' });  // 256px
+const xxxxxl = createSvgString(Alarm, { size: '5xl' });  // 512px
+```
+
+### Custom Sizing
+
+For custom sizes, use `width` and `height` options (overrides `size`):
+
+```javascript
+const custom1 = createSvgString(Alarm, { width: 32, height: 32 });
+const custom2 = createSvgString(Alarm, { width: '48', height: '48' });
+const custom3 = createSvgString(Alarm, { width: '2rem', height: '2rem' });
+```
+
+## Using Auto-Replace (getIcons)
+
+When using the auto-replace feature with `getIcons()`, add data attributes to your HTML elements:
+
+```html
+<!-- Size presets -->
+<i data-bx="alarm" data-size="xs"></i>    <!-- 16px -->
+<i data-bx="alarm" data-size="sm"></i>    <!-- 20px -->
+<i data-bx="alarm" data-size="base"></i>  <!-- 24px default -->
+<i data-bx="alarm" data-size="lg"></i>    <!-- 48px -->
+<i data-bx="alarm" data-size="xl"></i>    <!-- 64px -->
+
+<!-- Custom dimensions -->
+<i data-bx="alarm" data-width="32" data-height="32"></i>
+<i data-bx="home" data-width="64" data-height="64"></i>
+```
+
+```javascript
+import { getIcons, Alarm, Home } from '@boxicons/js';
+
+// Replace all elements with data-bx attribute
+getIcons({
+  icons: { Alarm, Home }
+});
+```
+
+### Available Data Attributes for Sizing
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| `data-size` | Size preset (xs, sm, base, md, lg, xl, 2xl, 3xl, 4xl, 5xl) | `data-size="lg"` |
+| `data-width` | Custom width in pixels | `data-width="32"` |
+| `data-height` | Custom height in pixels | `data-height="32"` |

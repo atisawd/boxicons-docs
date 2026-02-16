@@ -1,0 +1,55 @@
+# Colors
+
+## Using createSvgString/createElement
+
+Use the `fill` option to change the icon color (defaults to `currentColor`):
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons/js';
+
+const red = createSvgString(Alarm, { fill: '#ff0000' });
+const rgb = createSvgString(Alarm, { fill: 'rgb(0, 128, 255)' });
+const current = createSvgString(Alarm, { fill: 'currentColor' }); // Inherits text color
+```
+
+### Opacity
+
+Control transparency with the `opacity` option:
+
+```javascript
+const half = createSvgString(Alarm, { opacity: 0.5 });
+const threeQuarters = createSvgString(Alarm, { opacity: '0.75' });
+```
+
+## Using Auto-Replace (getIcons)
+
+When using the auto-replace feature with `getIcons()`, add data attributes to your HTML elements:
+
+```html
+<!-- Basic usage -->
+<i data-bx="alarm"></i>
+
+<!-- Custom color -->
+<i data-bx="alarm" data-fill="#ff0000"></i>
+<i data-bx="alarm" data-fill="rgb(0, 128, 255)"></i>
+
+<!-- Opacity -->
+<i data-bx="alarm" data-opacity="0.5"></i>
+<i data-bx="home" data-fill="blue" data-opacity="0.75"></i>
+```
+
+```javascript
+import { getIcons, Alarm, Home } from '@boxicons/js';
+
+// Replace all elements with data-bx attribute
+getIcons({
+  icons: { Alarm, Home }
+});
+```
+
+### Available Data Attributes for Styling
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| `data-fill` | Icon color | `data-fill="red"` |
+| `data-opacity` | Transparency (0-1) | `data-opacity="0.5"` |

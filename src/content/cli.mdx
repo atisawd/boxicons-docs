@@ -1,0 +1,485 @@
+import { Bleed } from 'nextra/components';
+
+# Boxicons CLI
+
+The Boxicons CLI is an interactive command-line tool that makes it easy to install Boxicons packages. It guides you through selecting the right package for your project, handles Pro registry configuration automatically, and even offers to add AI assistance documentation.
+
+## Installation
+
+Install the CLI globally using npm:
+
+```bash
+npm install -g @boxicons/cli
+```
+
+Or use it directly with npx:
+
+```bash
+npx @boxicons/cli
+```
+
+---
+
+## Quick Start
+
+Once installed, simply run:
+
+```bash
+boxicons
+```
+
+You'll see the Boxicons CLI welcome screen:
+
+```
+┌─────────────────────────────────────────┐
+│                                         │
+│           Boxicons CLI                  │
+│                                         │
+│         https://boxicons.com            │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## Usage Flow
+
+### Step 1: Choose Your Plan
+
+First, select whether you want FREE or PRO icons:
+
+```
+? Choose your plan: (Use arrow keys)
+❯ FREE - Access basic icons 
+  PRO - Access all icon packs and variations 
+```
+
+### FREE Package Installation
+
+If you select **FREE**, you'll be presented with 5 package options:
+
+```
+? Select package: (Use arrow keys)
+❯ Core
+  JavaScript  
+  React
+  Vue
+  Svelte
+```
+
+**Available FREE packages:**
+
+| Selection | Package Name | Description |
+|-----------|-------------|-------------|
+| Core | `@boxicons/core` | Core library with SVG icons and fonts |
+| JavaScript | `@boxicons/js` | JavaScript library |
+| React | `@boxicons/react` | React components |
+| Vue | `@boxicons/vue` | Vue components |
+| Svelte | `@boxicons/svelte` | Svelte components |
+
+### PRO Package Installation
+
+If you select **PRO**, the CLI will:
+
+#### Step 2: Configure API Key
+
+```
+? Enter your Boxicons Pro API Key: [hidden]
+```
+
+The CLI automatically creates or updates your `.npmrc` file with:
+
+```
+@boxicons-pro:registry=https://npm.boxicons.com/
+//npm.boxicons.com/:_authToken=YOUR_API_KEY
+```
+
+#### Step 3: Select Installation Type
+
+```
+? Installation type: (Use arrow keys)
+❯ Individual Packages (Recommended)
+  Main Package
+```
+
+#### Main Package Option
+
+Select from 4 framework options:
+
+```
+? Select framework: (Use arrow keys)
+❯ JS
+  React
+  Vue
+  Svelte
+```
+
+Installs: `@boxicons-pro/{framework}`
+
+#### Individual Packages Option
+
+This provides granular control over exactly which icons you install:
+
+**Step 4: Select Framework**
+```
+? Select framework: (Use arrow keys)
+❯ JS
+  React
+  Vue
+  Svelte
+```
+
+**Step 5: Select Icon Pack**
+```
+? Select icon pack: (Use arrow keys)
+❯ basic
+  filled
+  brands
+  duotone
+  duotone-mix
+  duotone-solid
+```
+
+**Step 6 & 7: Select Style and Weight** (skipped for brands)
+
+If you select any pack **except brands**, you'll choose style and weight:
+
+```
+? Select style: (Use arrow keys)
+❯ regular
+  rounded
+  sharp
+
+? Select weight: (Use arrow keys)
+❯ thin
+  normal
+  bold
+```
+
+**Package naming convention:**
+```
+@boxicons-pro/{framework}-{pack}-{style}[-{weight}]
+```
+
+- Weight is **only** included for `thin` or `bold` (omitted for `normal`)
+- Brands pack doesn't include style or weight (e.g., `@boxicons-pro/react-brands`)
+
+---
+
+## Examples
+
+### Install FREE React Package
+
+```
+? Choose your plan: FREE
+? Select package: React
+🚀 Installing @boxicons/react...
+✅ Successfully installed @boxicons/react!
+```
+
+### Install PRO Main Package for Vue
+
+```
+? Choose your plan: PRO
+? Enter your Boxicons Pro API Key: ********
+✅ Pro registry configured
+
+? Installation type: Main Package
+? Select framework: Vue
+🚀 Installing @boxicons-pro/vue...
+✅ Successfully installed @boxicons-pro/vue!
+```
+
+### Install PRO Individual Package
+
+```
+? Choose your plan: PRO
+? Enter your Boxicons Pro API Key: ********
+✅ Pro registry configured
+
+? Installation type: Individual Packages (Recommended)
+? Select framework: React
+? Select icon pack: duotone
+? Select style: rounded
+? Select weight: bold
+🚀 Installing @boxicons-pro/react-duotone-rounded-bold...
+✅ Successfully installed @boxicons-pro/react-duotone-rounded-bold!
+```
+
+### Install PRO Brands Package
+
+```
+? Choose your plan: PRO
+? Enter your Boxicons Pro API Key: ********
+✅ Pro registry configured
+
+? Installation type: Individual Packages (Recommended)
+? Select framework: Svelte
+? Select icon pack: brands
+🚀 Installing @boxicons-pro/svelte-brands...
+✅ Successfully installed @boxicons-pro/svelte-brands!
+```
+
+---
+
+## AI Assistance (SKILL.md)
+
+After installing a package, the CLI offers to add a SKILL.md file to help AI assistants understand how to work with Boxicons in your project.
+
+```
+? Would you like to add SKILL.md for AI assistance?
+❯ YES
+  NO
+```
+
+If you select **YES**, choose where to store it:
+
+```
+? Where would you like to store SKILL.md?
+❯ .cursor/skills/boxicons/SKILL.md
+  .claude/skills/boxicons/SKILL.md
+  .well-known/skills/default/SKILL.md
+```
+
+The SKILL.md file contains context about Boxicons usage, including:
+- Package structure and naming conventions
+- Icon packs and variations
+- Common usage patterns
+- Framework-specific examples
+
+This helps AI assistants like Cursor, Claude, and GitHub Copilot provide more accurate suggestions when working with Boxicons.
+
+---
+
+## Package Reference
+
+### FREE Packages
+
+| Package | Install Command |
+|---------|----------------|
+| Core | `npm install @boxicons/core` |
+| JavaScript | `npm install @boxicons/js` |
+| React | `npm install @boxicons/react` |
+| Vue | `npm install @boxicons/vue` |
+| Svelte | `npm install @boxicons/svelte` |
+
+### PRO Main Packages
+
+| Framework | Install Command |
+|-----------|----------------|
+| JS | `npm install @boxicons-pro/js` |
+| React | `npm install @boxicons-pro/react` |
+| Vue | `npm install @boxicons-pro/vue` |
+| Svelte | `npm install @boxicons-pro/svelte` |
+
+### PRO Individual Packages
+
+Individual packages follow this pattern:
+```
+@boxicons-pro/{framework}-{pack}-{style}[-{weight}]
+```
+
+**Examples:**
+- `@boxicons-pro/react-basic-regular`
+- `@boxicons-pro/vue-filled-rounded-bold`
+- `@boxicons-pro/js-duotone-sharp-thin`
+- `@boxicons-pro/svelte-brands`
+
+---
+
+## Troubleshooting
+
+### API Key Issues
+
+If you see an authentication error when installing Pro packages:
+1. Verify your API key is correct in your [Boxicons Account](https://boxicons.com/account/settings)
+2. Check that `.npmrc` was created correctly:
+   ```bash
+   cat .npmrc
+   ```
+3. The file should contain:
+   ```
+   @boxicons-pro:registry=https://npm.boxicons.com/
+   //npm.boxicons.com/:_authToken=YOUR_API_KEY
+   ```
+
+### Package Not Found
+
+If a package installation fails:
+1. Ensure you're using the correct package name format
+2. For Pro packages, verify your subscription is active
+3. Try updating the CLI: `npm install -g @boxicons/cli@latest`
+
+---
+
+## Getting Help
+
+- **Documentation**: https://boxicons.com
+- **Support**: contact@boxicons.com
+- **Issues**: Report on [GitHub](https://github.com/box-icons/boxicons-cli)
+
+---
+
+# @boxicons/core
+
+The `@boxicons/core` package is the foundation of the Boxicons ecosystem. It contains all icon SVGs, font files, and the SKILL.md documentation used by AI assistants. This package serves as the source of truth for all other Boxicons packages.
+
+## Installation
+
+```bash
+npm install @boxicons/core
+```
+
+## Contents
+
+The core package provides three main assets:
+
+### 1. SKILL.md
+
+The **SKILL.md** file is documentation designed specifically for AI assistants (Cursor, Claude, GitHub Copilot, etc.). It contains:
+
+- **System Status**: Current version, total icon count, last update date
+- **Icon Catalog**: Complete listing of all 2,179 icons across packs (Basic, Filled, Brands)
+- **Installation Matrix**: All FREE and PRO packages with install commands
+- **Usage Standards**: Props, naming conventions, and framework-specific examples
+- **Maintenance Workflows**: How to add new icons and SVG standards
+
+#### Using SKILL.md
+
+The CLI automatically offers to install SKILL.md to your project:
+
+```bash
+boxicons
+# ... follow prompts ...
+? Would you like to add SKILL.md for AI assistance? YES
+? Where would you like to store SKILL.md? .cursor/skills/boxicons/SKILL.md
+```
+
+This helps AI assistants in your IDE provide accurate Boxicons suggestions.
+
+**Manual Installation:**
+
+```bash
+# Copy SKILL.md to your AI skills directory
+cp node_modules/@boxicons/core/SKILL.md .cursor/skills/boxicons/SKILL.md
+```
+
+### 2. SVG Icons
+
+All icon SVGs are located in the `svg/` directory, organized by pack:
+
+```
+svg/
+├── basic/          # 1,884 outline icons
+│   ├── bx-user.svg
+│   ├── bx-home.svg
+│   └── ...
+├── filled/         # 1,884 solid icons
+│   ├── bx-user.svg
+│   ├── bx-home.svg
+│   └── ...
+└── brands/         # 295 brand logos
+    ├── bx-github.svg
+    ├── bx-twitter.svg
+    └── ...
+```
+
+#### Accessing SVGs Programmatically
+
+```javascript
+// Get SVG content
+const fs = require('fs');
+const svgContent = fs.readFileSync(
+  'node_modules/@boxicons/core/svg/basic/bx-user.svg',
+  'utf8'
+);
+
+// Or use the core utility
+const { icons } = require('@boxicons/core');
+console.log(icons); // Array of all icon names
+```
+
+#### SVG Standards
+
+All SVGs in the core package follow strict standards:
+
+- **ViewBox**: `0 0 24 24`
+- **Dimensions**: No hardcoded width/height (use CSS)
+- **Colors**: Use `currentColor` for theming
+- **Naming**: `bx-{name}.svg` (kebab-case)
+
+### 3. Font Files
+
+Icon fonts are available in the `dist/fonts/` directory:
+
+```
+dist/fonts/
+├── boxicons.eot
+├── boxicons.svg
+├── boxicons.ttf
+├── boxicons.woff
+├── boxicons.woff2
+└── boxicons.css
+```
+
+#### Using the Font
+
+**CDN (Recommended):**
+```html
+<link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+```
+
+**Local Installation:**
+```bash
+# Copy fonts to your project
+cp -r node_modules/@boxicons/core/dist/fonts ./public/fonts
+```
+
+```html
+<!-- In your HTML -->
+<link href="/fonts/boxicons.css" rel="stylesheet">
+
+<!-- Usage -->
+<i class="bx bx-user"></i>      <!-- Basic -->
+<i class="bxf bx-user"></i>     <!-- Filled -->
+<i class="bxl bx-github"></i>   <!-- Brands -->
+```
+
+#### Font CSS Classes
+
+| Class Prefix | Pack | Example |
+|-------------|------|---------|
+| `bx` | Basic (outline) | `<i class="bx bx-user">` |
+| `bxf` | Filled (solid) | `<i class="bxf bx-user">` |
+| `bxl` | Brands | `<i class="bxl bx-github">` |
+
+## Package Structure
+
+```
+@boxicons/core/
+├── svg/
+│   ├── basic/         # Outline icons
+│   ├── filled/        # Solid icons
+│   └── brands/        # Brand logos
+├── dist/
+│   └── fonts/         # Icon font files
+├── SKILL.md           # AI documentation
+├── icons.json         # Icon manifest
+└── package.json
+```
+
+## Why Use Core?
+
+- **Source of Truth**: All other packages derive from core
+- **Direct Access**: Get raw SVGs and fonts without framework overhead
+- **AI Support**: SKILL.md helps AI assistants understand your icon system
+- **Customization**: Build your own icon pipeline from source SVGs
+
+## Related Packages
+
+The core package is used by all framework-specific packages:
+
+- `@boxicons/react` - React components
+- `@boxicons/vue` - Vue components
+- `@boxicons/svelte` - Svelte components
+- `@boxicons/js` - JavaScript utilities

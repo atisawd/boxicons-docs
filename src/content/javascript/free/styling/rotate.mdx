@@ -1,0 +1,58 @@
+# Rotation & Flipping
+
+## Using createSvgString/createElement
+
+### Flip
+
+Mirror icons horizontally or vertically:
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons/js';
+
+const horizontal = createSvgString(Alarm, { flip: 'horizontal' }); // Mirrors left-to-right
+const vertical = createSvgString(Alarm, { flip: 'vertical' });   // Mirrors top-to-bottom
+```
+
+### Rotate
+
+Rotate icons by any degree:
+
+```javascript
+const rotate1 = createSvgString(Alarm, { rotate: 45 });      // Rotates 45 degrees
+const rotate2 = createSvgString(Alarm, { rotate: '90' });      // Rotates 90 degrees
+const rotate3 = createSvgString(Alarm, { rotate: '180deg' });  // Also accepts "deg" suffix
+```
+
+## Using Auto-Replace (getIcons)
+
+When using the auto-replace feature with `getIcons()`, add data attributes to your HTML elements:
+
+```html
+<!-- Rotation -->
+<i data-bx="alarm" data-rotate="45"></i>      <!-- Rotates 45 degrees -->
+<i data-bx="alarm" data-rotate="90"></i>      <!-- Rotates 90 degrees -->
+<i data-bx="alarm" data-rotate="180deg"></i>  <!-- Also accepts "deg" suffix -->
+
+<!-- Flipping -->
+<i data-bx="alarm" data-flip="horizontal"></i> <!-- Mirrors left-to-right -->
+<i data-bx="alarm" data-flip="vertical"></i>   <!-- Mirrors top-to-bottom -->
+
+<!-- Combined -->
+<i data-bx="alarm" data-flip="horizontal" data-rotate="45"></i>
+```
+
+```javascript
+import { getIcons, Alarm } from '@boxicons/js';
+
+// Replace all elements with data-bx attribute
+getIcons({
+  icons: { Alarm }
+});
+```
+
+### Available Data Attributes for Transformations
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| `data-flip` | Flip direction (horizontal or vertical) | `data-flip="horizontal"` |
+| `data-rotate` | Rotation in degrees | `data-rotate="45"` |

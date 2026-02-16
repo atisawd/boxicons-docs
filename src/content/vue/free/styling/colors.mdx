@@ -1,0 +1,26 @@
+# Colors
+
+Use the `fill` prop to change the icon color (defaults to `currentColor`):
+
+```vue
+<script setup>
+import { Alarm } from '@boxicons/vue';
+</script>
+
+<template>
+  <Alarm fill="#ff0000" />
+  <Alarm fill="rgb(0, 128, 255)" />
+  <Alarm fill="currentColor" /> <!-- Inherits text color -->
+</template>
+```
+
+### Opacity
+
+Control transparency with the `opacity` prop:
+
+```vue
+<template>
+  <Alarm :opacity="0.5" />
+  <Alarm opacity="0.75" />
+</template>
+```

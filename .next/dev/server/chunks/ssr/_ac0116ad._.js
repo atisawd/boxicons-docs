@@ -1,7 +1,7 @@
 module.exports = [
 "[project]/package.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v({"name":"boxicons-docs","version":"1.0.0","icon_version":"3.0.8","description":"","license":"ISC","author":"","type":"module","main":"index.js","scripts":{"dev":"next dev","build":"next build","start":"next start","postbuild":"pagefind --site .next/server/app --output-path public/_pagefind","add":"git add .","push":"git push -u origin main"},"dependencies":{"next":"^16.1.1","nextra":"^4.6.1","nextra-theme-docs":"^4.6.1","react":"^19.2.3","react-dom":"^19.2.3"},"devDependencies":{"@tailwindcss/postcss":"^4.1.5","@types/node":"22.15.3","@types/react":"19.1.2","pagefind":"^1.3.0","postcss":"^8.5.3","tailwindcss":"^4.1.5"}});}),
+__turbopack_context__.v({"name":"boxicons-docs","version":"1.0.0","icon_version":"3.0.8","description":"","license":"ISC","author":"","type":"module","main":"index.js","pnpm":{"overrides":{"mathjax-full":"^3.2.2"}},"scripts":{"dev":"next dev","build":"next build","start":"next start","postbuild":"pagefind --site .next/server/app --output-path public/_pagefind","add":"git add .","push":"git push -u origin main"},"dependencies":{"next":"^16.1.6","nextra":"^4.6.1","nextra-theme-docs":"^4.6.1","react":"^19.2.4","react-dom":"^19.2.4"},"devDependencies":{"@tailwindcss/postcss":"^4.1.5","@types/node":"22.15.3","@types/react":"19.1.2","pagefind":"^1.3.0","postcss":"^8.5.3","tailwindcss":"^4.1.5"}});}),
 "[project]/src/app/layout.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 

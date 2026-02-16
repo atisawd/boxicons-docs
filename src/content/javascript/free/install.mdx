@@ -1,0 +1,262 @@
+# Installation
+
+JavaScript icon library built from Boxicons SVG files with full tree-shaking support.
+
+## Installation
+
+```bash
+npm install @boxicons/js
+# or
+yarn add @boxicons/js
+# or
+pnpm add @boxicons/js
+```
+
+## Usage
+
+### Importing Icons
+
+Import individual icons for tree-shaking:
+
+```javascript
+import { Alarm, Twitter, Home } from '@boxicons/js';
+```
+
+Or import all icons:
+
+```javascript
+import * as icons from '@boxicons/js';
+```
+
+### Using Icons
+
+#### As SVG Strings
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons/js';
+
+const svgString = createSvgString(Alarm);
+console.log(svgString); // <svg>...</svg>
+
+// With options
+const svgWithOptions = createSvgString(Alarm, {
+  size: 'lg',
+  fill: 'red'
+});
+```
+
+#### As DOM Elements
+
+```javascript
+import { createElement, Alarm } from '@boxicons/js';
+
+const svgElement = createElement(Alarm);
+document.body.appendChild(svgElement);
+```
+
+#### Auto-Replace (Lucide-style)
+
+Automatically replace HTML elements with Boxicons by using data attributes. This is similar to how Lucide icons work.
+
+```javascript
+import { getIcons, Alarm, Home, Menu } from '@boxicons/js';
+
+// Replace all elements with data-bx attribute
+getIcons({
+  icons: { Alarm, Home, Menu }
+});
+```
+
+```html
+<!-- Basic usage -->
+<i data-bx="alarm"></i>
+
+<!-- With styling options -->
+<i data-bx="home" data-size="lg"></i>
+<i data-bx="menu" data-fill="red"></i>
+<i data-bx="heart" data-pack="filled" data-size="xl" data-fill="#ff0000"></i>
+```
+
+##### Data Attributes Reference
+
+When using auto-replace, you can use these data attributes to style icons:
+
+| Attribute | Description | Values |
+|-----------|-------------|---------|
+| `data-bx` | **(Required)** Icon name | `alarm`, `home`, `menu`, etc. |
+| `data-pack` | Icon pack variant | `basic`, `filled`, `brands` |
+| `data-fill` | Icon color | Any CSS color value |
+| `data-opacity` | Transparency | `0` to `1` |
+| `data-size` | Size preset | `xs`, `sm`, `base`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl` |
+| `data-width` | Custom width (px) | Number |
+| `data-height` | Custom height (px) | Number |
+| `data-flip` | Flip direction | `horizontal`, `vertical` |
+| `data-rotate` | Rotation (degrees) | Number or `45deg` format |
+| `data-remove-padding` | Remove padding | `true`, `false` |
+
+### Icon Packs
+
+Each icon can have multiple variants. Use the `pack` option to switch between them:
+
+- **basic** - Outline/regular style icons (default for most icons)
+- **filled** - Solid/filled style icons
+- **brands** - Brand/logo icons (default for brand icons like Twitter, Facebook, etc.)
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons/js';
+
+// Basic/outline style (default)
+const basic = createSvgString(Alarm);
+
+// Filled style
+const filled = createSvgString(Alarm, { pack: 'filled' });
+```
+
+### Combining Props
+
+All options can be combined:
+
+```javascript
+const svg = createSvgString(Alarm, {
+  pack: 'filled',
+  fill: '#ffffff',
+  opacity: 0.8,
+  size: 'lg',
+  flip: 'horizontal',
+  rotate: 45,
+  className: 'my-icon'
+});
+```
+
+## Tree Shaking
+
+This library is fully tree-shakeable. Only the icons you import will be included in your final bundle.
+
+```javascript
+// ✅ Only Alarm is bundled
+import { Alarm } from '@boxicons/js';
+
+// ✅ Direct import also works
+import { Alarm } from '@boxicons/js/icons/Alarm';
+```
+
+### Naming Convention
+
+Icon names use PascalCase:
+
+| Icon Name | Usage |
+|-----------|-------|
+| `Alarm` | `createSvgString(Alarm)` |
+| `AlarmClock` | `createSvgString(AlarmClock)` |
+| `Twitter` | `createSvgString(Twitter)` |
+
+## TypeScript
+
+Full TypeScript support with exported types:
+
+```typescript
+import type { BoxIconProps, IconPack, IconSize, FlipDirection } from '@boxicons/js';
+```
+
+### BoxIconProps
+
+```typescript
+interface IconOptions {
+  pack?: 'basic' | 'filled' | 'brands';
+  fill?: string;
+  opacity?: number | string;
+  width?: number | string;
+  height?: number | string;
+  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+  flip?: 'horizontal' | 'vertical';
+  rotate?: number | string;
+  removePadding?: boolean;
+  className?: string;
+  style?: string;
+  ariaLabel?: string;
+}
+```
+
+## Testing
+
+The package includes comprehensive tests to ensure icon integrity and functionality. When using this package in your projects, consider:
+
+### Icon Integrity
+
+All icons are validated to ensure:
+- Valid SVG structure with proper `xmlns` attribute
+- Correct `viewBox` dimensions (24x24)
+- Non-empty path data
+- Proper pack variants (basic, filled, brands)
+
+### Testing in Your Project
+
+```javascript
+import { describe, it, expect } from 'vitest';
+import { createSvgString, Alarm } from '@boxicons/js';
+
+describe('Boxicons Integration', () => {
+  it('should generate valid SVG', () => {
+    const svg = createSvgString(Alarm);
+    expect(svg).toContain('<svg');
+    expect(svg).toContain('xmlns="http://www.w3.org/2000/svg"');
+    expect(svg).toContain('viewBox="0 0 24 24"');
+  });
+
+  it('should apply custom props', () => {
+    const svg = createSvgString(Alarm, { 
+      fill: 'red', 
+      size: 'lg' 
+    });
+    expect(svg).toContain('fill="red"');
+    expect(svg).toContain('width="32"');
+  });
+});
+```
+
+## Best Practices
+
+### Performance
+
+- **Tree-shake aggressively**: Only import icons you use
+- **Cache SVG strings**: If generating the same icon multiple times, cache the result
+- **Use auto-replace sparingly**: For dynamic icon rendering, prefer `createElement` or framework components
+
+### Accessibility
+
+Always provide accessible labels:
+
+```javascript
+const svg = createSvgString(Alarm, {
+  ariaLabel: 'Alarm clock icon'
+});
+```
+
+Or with auto-replace:
+
+```html
+<i data-bx="alarm" aria-label="Alarm clock icon"></i>
+```
+
+## Common Issues
+
+### Icons not replacing
+
+If auto-replace isn't working, ensure:
+1. You've called `getIcons()` after the DOM is loaded
+2. Icon names in `data-bx` match the imported icon names (case-insensitive)
+3. Icons are registered in the `getIcons({ icons: { ... } })` call
+
+### Bundle size concerns
+
+Use direct imports for better tree-shaking:
+
+```javascript
+// ✅ Better
+import { Alarm } from '@boxicons/js/icons/Alarm';
+
+// ⚠️ Less optimal (but still tree-shakeable)
+import { Alarm } from '@boxicons/js';
+```
+
+# @boxicons/js

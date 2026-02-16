@@ -1,0 +1,36 @@
+# Sizing
+
+### Size Presets
+
+Use the `size` prop for convenient preset sizes:
+
+```vue
+<script setup>
+import { Alarm } from '@boxicons/vue';
+</script>
+
+<template>
+  <Alarm size="xs" />   <!-- 16px -->
+  <Alarm size="sm" />   <!-- 20px -->
+  <Alarm size="base" /> <!-- 24px (default) -->
+  <Alarm size="md" />   <!-- 36px -->
+  <Alarm size="lg" />   <!-- 48px -->
+  <Alarm size="xl" />   <!-- 64px -->
+  <Alarm size="2xl" />  <!-- 96px -->
+  <Alarm size="3xl" />  <!-- 128px -->
+  <Alarm size="4xl" />  <!-- 256px -->
+  <Alarm size="5xl" />  <!-- 512px -->
+</template>
+```
+
+### Custom Sizing
+
+For custom sizes, use `width` and `height` props (overrides `size`):
+
+```vue
+<template>
+  <Alarm :width="32" :height="32" />
+  <Alarm width="48" height="48" />
+  <Alarm width="2rem" height="2rem" />
+</template>
+```

@@ -1,17 +1,20 @@
-import { Callout } from 'nextra/components'   
+import { Callout } from 'nextra/components'
+
+# React Pro Package
+
+The Boxicons Pro React package provides over 50,000 icon variations as highly optimized, tree-shakable components. It's the most efficient way to use Boxicons in modern React applications.
 
 ## Installation
 
-Create an account on [Boxicons Pro](https://boxicons.com/) and obtain your API key.
-Add the following to your `.npmrc` file, replacing `YOUR_API_KEY` with your key which you can find in you [Account Settings](https://boxicons.com/account/settings):
+To access the Pro registry, you must first configure your `.npmrc` file with your API key. You can find your key in your [Account Settings](https://boxicons.com/account/settings).
+
+1. Add the following to your `.npmrc`:
 ```bash
 @boxicons-pro:registry=https://npm.boxicons.com/
 //npm.boxicons.com/:_authToken=YOUR_API_KEY
 ```
-<Callout type="warning" >
-  Make sure to keep your API key secure and do not expose it in public repositories.
-</Callout>
 
+2. Install the main package:
 ```bash
 # Using npm
 npm install @boxicons-pro/react
@@ -23,6 +26,10 @@ yarn add @boxicons-pro/react
 pnpm add @boxicons-pro/react
 ```
 
+<Callout type="warning">
+  Ensure your API key remains secure. Avoid committing it directly to public repositories; consider using environment variables for CI/CD environments.
+</Callout>
+
 ---
 
 ## Quick Start
@@ -33,9 +40,9 @@ import { Alarm, Home, User } from '@boxicons-pro/react';
 function App() {
   return (
     <div>
-      <Alarm />
-      <Home size="lg" />
-      <User fill="blue" />
+      <Alarm size="lg" />
+      <Home weight="thin" color="#3b82f6" />
+      <User pack="filled" style="rounded" />
     </div>
   );
 }
@@ -43,31 +50,26 @@ function App() {
 
 ---
 
-## Import Methods
+## Performance & Tree-Shaking
 
-### Method 1: Named imports (loads all icons)
+The package supports multiple import methods to suit your development and production needs.
 
+### Method 1: Named Imports (Best for DX)
+Ideal for development. Modern bundlers (Vite, Webpack 5) will tree-shake unused icons in production, though initial dev build times may be slightly longer.
 ```jsx
-// ⚠️ This imports the barrel file which includes ALL icons
-// Good for development, but larger bundle size
-import { Alarm, Home, User } from '@boxicons-pro/react';
+import { Alarm, Home } from '@boxicons-pro/react';
 ```
 
-### Method 2: Direct imports (recommended for production)
-
+### Method 2: Direct Imports (Best for cold-start performance)
+Guarantees that only the code for the specific icon is loaded, bypassing the barrel file entirely.
 ```jsx
-// ✅ Only loads the specific icon you need - best for tree-shaking
 import { Alarm } from '@boxicons-pro/react/icons/Alarm';
-import { Home } from '@boxicons-pro/react/icons/Home';
-import { User } from '@boxicons-pro/react/icons/User';
 ```
 
-### Method 3: Individual packages (smallest bundle)
-
+### Method 3: Granular Packages (Best for bundle size)
+If your project only uses a specific style (e.g., Rounded-Bold), you can install that variant specifically to minimize the dependency graph.
 ```jsx
-// ✅ Pre-filtered by pack/style/weight - smallest possible bundle
-import { Alarm } from '@boxicons-pro/react-basic-regular';
-import { Home } from '@boxicons-pro/react-duotone-rounded-bold';
+import { Alarm } from '@boxicons-pro/react-basic-rounded-bold';
 ```
 
 ---

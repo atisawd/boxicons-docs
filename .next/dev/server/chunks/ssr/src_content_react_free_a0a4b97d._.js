@@ -57,7 +57,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Colors",
     "filePath": "src/content/react/free/styling/colors.mdx",
-    "timestamp": 1769581753142
+    "timestamp": 1771201386139
 };
 const sourceCode = "# Colors\n\nUse the `fill` prop to change the icon color (defaults to `currentColor`):\n\n```tsx\n<Alarm fill=\"#ff0000\" />\n<Alarm fill=\"rgb(0, 128, 255)\" />\n<Alarm fill=\"currentColor\" /> {/* Inherits text color */}\n```\n\n### Opacity\n\nControl transparency with the `opacity` prop:\n\n```tsx\n<Alarm opacity={0.5} />\n<Alarm opacity=\"0.75\" />\n```";
 function useTOC(props) {
@@ -614,7 +614,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Remove Padding",
     "filePath": "src/content/react/free/styling/padding.mdx",
-    "timestamp": 1769581753191
+    "timestamp": 1771201383109
 };
 const sourceCode = "# Remove Padding\n\nRemove the default 2px padding around icons for a tighter fit:\n\n```tsx\n<Alarm removePadding />    \n```";
 function useTOC(props) {
@@ -743,7 +743,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Rotation & Flipping",
     "filePath": "src/content/react/free/styling/rotate.mdx",
-    "timestamp": 1769581752504
+    "timestamp": 1771201383109
 };
 const sourceCode = "# Rotation & Flipping\n\n### Flip\n\nMirror icons horizontally or vertically:\n\n```tsx\n<Alarm flip=\"horizontal\" /> {/* Mirrors left-to-right */}\n<Alarm flip=\"vertical\" />   {/* Mirrors top-to-bottom */}\n```\n\n### Rotate\n\nRotate icons by any degree:\n\n```tsx\n<Alarm rotate={45} />      {/* Rotates 45 degrees */}\n<Alarm rotate=\"90\" />      {/* Rotates 90 degrees */}\n<Alarm rotate=\"180deg\" />  {/* Also accepts \"deg\" suffix */}\n```";
 function useTOC(props) {
@@ -1374,7 +1374,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Sizing",
     "filePath": "src/content/react/free/styling/sizing.mdx",
-    "timestamp": 1769581752379
+    "timestamp": 1771201383109
 };
 const sourceCode = "# Sizing\n\n### Size Presets\n\nUse the `size` prop for convenient preset sizes:\n\n```tsx\n<Alarm size=\"xs\" />   {/* 16px */}\n<Alarm size=\"sm\" />   {/* 20px */}\n<Alarm size=\"base\" /> {/* 24px (default) */}\n<Alarm size=\"md\" />   {/* 36px */}\n<Alarm size=\"lg\" />   {/* 48px */}\n<Alarm size=\"xl\" />   {/* 64px */}\n<Alarm size=\"2xl\" />  {/* 96px */}\n<Alarm size=\"3xl\" />  {/* 128px */}\n<Alarm size=\"4xl\" />  {/* 256px */}\n<Alarm size=\"5xl\" />  {/* 512px */}\n```\n\n### Custom Sizing\n\nFor custom sizes, use `width` and `height` props (overrides `size`):\n\n```tsx\n<Alarm width={32} height={32} />\n<Alarm width=\"48\" height=\"48\" />\n<Alarm width=\"2rem\" height=\"2rem\" />\n```";
 function useTOC(props) {
@@ -2872,7 +2872,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const metadata = {
     "title": "Installation",
     "filePath": "src/content/react/free/install.mdx",
-    "timestamp": 1769581752577
+    "timestamp": 1771201383109
 };
 const sourceCode = "# Installation\n\nReact icon library built from Boxicons SVG files with full tree-shaking support.\n\n## Installation\n\n```bash\nnpm install @boxicons/react\n# or\nyarn add @boxicons/react\n# or\npnpm add @boxicons/react\n```\n\n## Usage\n\n### Basic Usage\n\n```tsx\nimport { Alarm, Twitter, Home } from '@boxicons/react';\n\nfunction App() {\n  return (\n    <div>\n      <Alarm />\n      <Twitter />\n      <Home />\n    </div>\n  );\n}\n```\n\n### Icon Packs\n\nEach icon can have multiple variants. Use the `pack` prop to switch between them:\n\n- **basic** - Outline/regular style icons (default for most icons)\n- **filled** - Solid/filled style icons\n- **brands** - Brand/logo icons (default for brand icons like Twitter, Facebook, etc.)\n\n```tsx\nimport { Alarm } from '@boxicons/react';\n\nfunction App() {\n  return (\n    <div>\n      {/* Basic/outline style (default) */}\n      <Alarm />\n      \n      {/* Filled style */}\n      <Alarm pack=\"filled\" />\n    </div>\n  );\n}\n```\n\n\n\n### Combining Props\n\nAll props can be combined:\n\n```tsx\n<Alarm \n  pack=\"filled\"\n  fill=\"#ffffff\"\n  opacity={0.8}\n  size=\"lg\"\n  flip=\"horizontal\"\n  rotate={45}\n  className=\"my-icon\"\n  style={{ margin: '8px' }}\n/>\n```\n\n### Standard SVG Props\n\nAll standard SVG props are supported and passed through to the underlying `<svg>` element:\n\n```tsx\n<Alarm \n  className=\"icon\"\n  id=\"my-alarm-icon\"\n  aria-label=\"Alarm\"\n  role=\"img\"\n  onClick={() => console.log('clicked')}\n/>\n```\n\n### Ref Forwarding\n\nRefs are forwarded to the SVG element:\n\n```tsx\nimport { useRef } from 'react';\nimport { Alarm } from '@boxicons/react';\n\nfunction App() {\n  const iconRef = useRef<SVGSVGElement>(null);\n  \n  return <Alarm ref={iconRef} />;\n}\n```\n\n## Tree Shaking\n\nThis library is fully tree-shakeable. Only the icons you import will be included in your final bundle.\n\n```tsx\n// ✅ Only Alarm is bundled\nimport { Alarm } from '@boxicons/react';\n\n// ✅ Direct import also works\nimport { Alarm } from '@boxicons/react/icons/Alarm';\n```\n\n### Naming Convention\n\nIcon names are converted from kebab-case SVG filenames to PascalCase:\n\n| SVG File | Component Name |\n|----------|---------------|\n| `bx-alarm.svg` | `<Alarm />` |\n| `bx-alarm-clock.svg` | `<AlarmClock />` |\n| `bx-twitter.svg` | `<Twitter />` |\n| `bx-8-ball.svg` | `<Icon8Ball />` |\n\n**Note:** Icons starting with numbers are prefixed with \"Icon\" (e.g., `Icon8Ball`, `Icon500px`).\n\n**Note:** Some icons have the \"Icon\" suffix to avoid conflicts with reserved words (e.g., `ReactIcon` for the React logo).\n\n## TypeScript\n\nFull TypeScript support with exported types:\n\n```tsx\nimport type { BoxIconProps, IconPack, IconSize, FlipDirection } from '@boxicons/react';\n```\n\n### BoxIconProps\n\n```tsx\ninterface BoxIconProps extends SVGProps<SVGSVGElement> {\n  pack?: 'basic' | 'filled' | 'brands';\n  fill?: string;\n  opacity?: number | string;\n  width?: number | string;\n  height?: number | string;\n  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';\n  flip?: 'horizontal' | 'vertical';\n  rotate?: number | string;\n  removePadding?: boolean;\n}\n```\n\n\n# @boxicons/react";
 function useTOC(props) {

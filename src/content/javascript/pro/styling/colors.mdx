@@ -1,0 +1,40 @@
+# Colors
+
+Use the `fill` option to change the icon color (defaults to `currentColor`):
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons-pro/js';
+
+createSvgString(Alarm, { fill: '#ff0000' });
+createSvgString(Alarm, { fill: 'rgb(0, 128, 255)' });
+createSvgString(Alarm, { fill: 'currentColor' }); // Inherits text color
+```
+
+#### Customizing Duotone Colors
+
+```javascript
+// Customizing duotone each layer color and opacity
+createSvgString(Alarm, {
+  pack: 'duotone',
+  primaryFill: '#1E40AF',      // Primary layer color (foreground)
+  primaryOpacity: 1,            // Primary layer opacity
+  secondaryFill: '#3B82F6',    // Secondary layer color (background)
+  secondaryOpacity: 0.4         // Secondary layer opacity
+});
+
+// Customizing duotone whole svg
+createSvgString(Alarm, {
+  pack: 'duotone',
+  fill: '#3B82F6',
+  opacity: 0.8
+});
+```
+
+### Opacity
+
+Control transparency with the `opacity` option:
+
+```javascript
+createSvgString(Alarm, { opacity: 0.5 });
+createSvgString(Alarm, { opacity: '0.75' });
+```

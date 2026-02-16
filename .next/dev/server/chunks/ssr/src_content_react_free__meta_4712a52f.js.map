@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/aniketsuvarna/Desktop/boxicons/boxicons-docs/src/content/react/free/_meta.js"],"sourcesContent":["export default {\n  install: {\n   title: 'Install React Package',\n  }\n  ,\n  styling: {\n    title: 'Style the Icons',\n  }\n}\n"],"names":[],"mappings":";;;;uCAAe;IACb,SAAS;QACR,OAAO;IACR;IAEA,SAAS;QACP,OAAO;IACT;AACF"}}]
-}

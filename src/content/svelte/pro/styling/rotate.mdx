@@ -1,0 +1,21 @@
+
+# Rotation & Flipping
+
+### Flip
+
+Mirror icons horizontally or vertically:
+
+```svelte
+<Alarm flip="horizontal" /> <!-- Mirrors left-to-right -->
+<Alarm flip="vertical" />   <!-- Mirrors top-to-bottom -->
+```
+
+### Rotate
+
+Rotate icons by any degree:
+
+```svelte
+<Alarm rotate={45} />       <!-- Rotates 45 degrees -->
+<Alarm rotate="90" />       <!-- Rotates 90 degrees -->
+<Alarm rotate="180deg" />   <!-- Also accepts "deg" suffix -->
+```

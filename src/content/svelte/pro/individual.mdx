@@ -1,0 +1,85 @@
+# Individual Packages
+
+For smaller bundle sizes, you can install only the specific icon packs you need. All packages are scoped under `@boxicons-pro`.
+
+### Package Naming Convention
+```
+@boxicons-pro/svelte-{pack}-{style}[-{weight}]
+```
+
+- Weight is omitted for normal (400) weight
+- `thin` suffix for 200 weight
+- `bold` suffix for 700 weight
+
+### Available Packages
+
+#### Basic Icons
+```bash
+npm install @boxicons-pro/svelte-basic-regular
+npm install @boxicons-pro/svelte-basic-regular-thin
+npm install @boxicons-pro/svelte-basic-regular-bold
+npm install @boxicons-pro/svelte-basic-rounded
+npm install @boxicons-pro/svelte-basic-rounded-thin
+npm install @boxicons-pro/svelte-basic-rounded-bold
+npm install @boxicons-pro/svelte-basic-sharp
+npm install @boxicons-pro/svelte-basic-sharp-thin
+npm install @boxicons-pro/svelte-basic-sharp-bold
+```
+
+#### Filled Icons
+```bash
+npm install @boxicons-pro/svelte-filled-regular
+npm install @boxicons-pro/svelte-filled-regular-thin
+npm install @boxicons-pro/svelte-filled-regular-bold
+npm install @boxicons-pro/svelte-filled-rounded
+npm install @boxicons-pro/svelte-filled-sharp
+# ... and more
+```
+
+#### Duotone Icons
+```bash
+npm install @boxicons-pro/svelte-duotone-regular
+npm install @boxicons-pro/svelte-duotone-regular-thin
+npm install @boxicons-pro/svelte-duotone-regular-bold
+npm install @boxicons-pro/svelte-duotone-rounded
+npm install @boxicons-pro/svelte-duotone-sharp
+# ... and more
+```
+---
+
+#### Brands
+```bash
+npm install @boxicons-pro/svelte-brands
+```
+
+---
+
+### Usage with Individual Packages
+
+```svelte
+<script>
+  // Import from specific packages
+  import { Alarm } from '@boxicons-pro/svelte-basic-regular';
+  import { Heart } from '@boxicons-pro/svelte-filled-rounded-bold';
+  import { Bell } from '@boxicons-pro/svelte-duotone-solid-sharp-thin';
+  import { Github } from '@boxicons-pro/svelte-brands';
+</script>
+
+<div>
+  <Alarm size="lg" />
+  <Heart size="lg" fill="red" />
+  <Bell 
+    size="lg" 
+    primaryFill="#3b82f6" 
+    secondaryFill="#93c5fd" 
+  />
+  <Github size="lg" />
+</div>
+```
+
+### Benefits
+
+- **Smaller bundle size**: Only include the exact icon variants you need
+- **Faster builds**: Less code to process and bundle
+- **Better tree-shaking**: Pre-filtered packages are easier for bundlers to optimize
+- **Type safety**: Each package has its own TypeScript definitions

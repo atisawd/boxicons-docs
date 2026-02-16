@@ -1,0 +1,28 @@
+# Rotation & Flipping
+
+### Flip
+
+Mirror icons horizontally or vertically:
+
+```vue
+<script setup>
+import { Alarm } from '@boxicons/vue';
+</script>
+
+<template>
+  <Alarm flip="horizontal" /> <!-- Mirrors left-to-right -->
+  <Alarm flip="vertical" />   <!-- Mirrors top-to-bottom -->
+</template>
+```
+
+### Rotate
+
+Rotate icons by any degree:
+
+```vue
+<template>
+  <Alarm :rotate="45" />      <!-- Rotates 45 degrees -->
+  <Alarm rotate="90" />      <!-- Rotates 90 degrees -->
+  <Alarm rotate="180deg" />  <!-- Also accepts "deg" suffix -->
+</template>
+```

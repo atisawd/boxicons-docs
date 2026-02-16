@@ -1,0 +1,23 @@
+
+# Rotation & Flipping
+
+### Flip
+
+Mirror icons horizontally or vertically:
+
+```javascript
+import { createSvgString, Alarm } from '@boxicons-pro/js';
+
+createSvgString(Alarm, { flip: 'horizontal' }); // Mirrors left-to-right
+createSvgString(Alarm, { flip: 'vertical' });   // Mirrors top-to-bottom
+```
+
+### Rotate
+
+Rotate icons by any degree:
+
+```javascript
+createSvgString(Alarm, { rotate: 45 });       // Rotates 45 degrees
+createSvgString(Alarm, { rotate: '90' });     // Rotates 90 degrees
+createSvgString(Alarm, { rotate: '180deg' }); // Also accepts "deg" suffix
+```

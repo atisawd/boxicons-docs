@@ -73,7 +73,27 @@ border:1px solid #e5e5e5 !important;
 .nextra-sidebar-footer:where(.dark *){
   background-color: #000000 !important;
 }
+.nextra-sidebar.x\:w-64 {
+  width: 350px !important;
+}
 
+/* 2. Ensure the COLLAPSED state still works (overriding x:w-20) */
+/* If you want it to be 80px (default collapsed), keep this: */
+.nextra-sidebar.x\:w-20 {
+  width: 80px !important; 
+}
+
+/* 3. Adjust the main content margin to match your 320px */
+/* Nextra typically uses a margin on the main container to clear the sidebar */
+.nextra-body {
+  margin-left: 350px;
+  transition: margin-left 0.2s ease-in-out;
+}
+
+/* Collapse the margin when the sidebar is in mini-mode (w-20) */
+.nextra-sidebar.x\:w-20 ~ .nextra-body {
+  margin-left: 80px;
+}
 .nextra-scrollbar ul li a,
 .nextra-scrollbar ul li button,
 .nextra-scrollbar ul li {
@@ -111,12 +131,18 @@ article .nextra-breadcrumb {
   background-color: transparent !important;
 }
 .nextra-card:where(.dark *){
-  background-color: #141414 !important;
-  border:0px solid #141414 !important;
+  background-color: #000000 !important;
+  border:1px solid #141414 !important;
+}
+li.active a{
+  color:#000000 !important;
+}
+li.active:where(.dark *) a{
+  color:#ffffff !important;
 }
 .nextra-card:where(.dark *):hover{
   background-color: #141414 !important;
-  border:0px solid #141414 !important;
+  border:1px solid #141414 !important;
 }
 table td:where(.dark *),table th:where(.dark *),table tr:where(.dark *){
   
@@ -149,9 +175,6 @@ table{
   max-width: 1200px !important;
 }
 
-.nextra-card span {
-  font-size: 1.5rem !important;
-}
 
 .dark .main-button {
   background-color: #fff;

@@ -1,0 +1,87 @@
+# Individual Packages
+
+For smaller bundle sizes, you can install only the specific icon packs you need. All packages are scoped under `@boxicons-pro`.
+
+### Package Naming Convention
+```
+@boxicons-pro/vue-{pack}-{style}[-{weight}]
+```
+
+- Weight is omitted for normal (400) weight
+- `thin` suffix for 200 weight
+- `bold` suffix for 700 weight
+
+### Available Packages
+
+#### Basic Icons
+```bash
+npm install @boxicons-pro/vue-basic-regular
+npm install @boxicons-pro/vue-basic-regular-thin
+npm install @boxicons-pro/vue-basic-regular-bold
+npm install @boxicons-pro/vue-basic-rounded
+npm install @boxicons-pro/vue-basic-rounded-thin
+npm install @boxicons-pro/vue-basic-rounded-bold
+npm install @boxicons-pro/vue-basic-sharp
+npm install @boxicons-pro/vue-basic-sharp-thin
+npm install @boxicons-pro/vue-basic-sharp-bold
+```
+
+#### Filled Icons
+```bash
+npm install @boxicons-pro/vue-filled-regular
+npm install @boxicons-pro/vue-filled-regular-thin
+npm install @boxicons-pro/vue-filled-regular-bold
+npm install @boxicons-pro/vue-filled-rounded
+npm install @boxicons-pro/vue-filled-sharp
+# ... and more
+```
+
+#### Duotone Icons
+```bash
+npm install @boxicons-pro/vue-duotone-regular
+npm install @boxicons-pro/vue-duotone-regular-thin
+npm install @boxicons-pro/vue-duotone-regular-bold
+npm install @boxicons-pro/vue-duotone-rounded
+npm install @boxicons-pro/vue-duotone-sharp
+# ... and more
+```
+---
+
+#### Brands
+```bash
+npm install @boxicons-pro/vue-brands
+```
+
+---
+
+### Usage with Individual Packages
+
+```vue
+<script setup>
+// Import from specific packages
+import { Alarm } from '@boxicons-pro/vue-basic-regular';
+import { Heart } from '@boxicons-pro/vue-filled-rounded-bold';
+import { Bell } from '@boxicons-pro/vue-duotone-solid-sharp-thin';
+import { Github } from '@boxicons-pro/vue-brands';
+</script>
+
+<template>
+  <div>
+    <Alarm size="lg" />
+    <Heart size="lg" fill="red" />
+    <Bell 
+      size="lg" 
+      primaryFill="#3b82f6" 
+      secondaryFill="#93c5fd" 
+    />
+    <Github size="lg" />
+  </div>
+</template>
+```
+
+### Benefits
+
+- **Smaller bundle size**: Only include the exact icon variants you need
+- **Faster builds**: Less code to process and bundle
+- **Better tree-shaking**: Pre-filtered packages are easier for bundlers to optimize
+- **Type safety**: Each package has its own TypeScript definitions
