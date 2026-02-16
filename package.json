@@ -8,10 +8,11 @@
   "type": "module",
   "main": "index.js",
   "pnpm": {
-    "overrides": {
-      "mathjax-full": "^3.2.2"
-    }
-  },
+  "overrides": {
+    "mathjax-full": "^3.2.2"
+  }
+},
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
